@@ -79,7 +79,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
           title: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(49.0, 0.0, 0.0, 0.0),
             child: Text(
-              'Rest your Password',
+              'Reset your Password',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Sora',
                     color: Colors.white,

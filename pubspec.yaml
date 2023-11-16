@@ -41,6 +41,11 @@ dependencies:
   firebase_performance_web: 0.1.4+2
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.0
+  flutter_facebook_auth: 
+    git:
+      url: https://github.com/asmengistu/flutter-facebook-auth
+      ref: b65ffb049c9f1e2704adbeb1aa19c61693c946a5
+      path: facebook_auth
   flutter_native_splash: 2.3.1
   flutter_svg: 2.0.4
   font_awesome_flutter: 10.1.0
