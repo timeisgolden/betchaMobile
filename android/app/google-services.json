@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "929880995383",
+    "project_id": "betcha-test",
+    "storage_bucket": "betcha-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929880995383:android:90e5b149b18216d02231b2",
+        "android_client_info": {
+          "package_name": "com.flutterflow.healthai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD6gMgUstlMNPEiAquETbRA-H4b8SOZ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929880995383:android:efadf9e46122ec252231b2",
+        "android_client_info": {
+          "package_name": "com.mycompany.betchaproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD6gMgUstlMNPEiAquETbRA-H4b8SOZ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
