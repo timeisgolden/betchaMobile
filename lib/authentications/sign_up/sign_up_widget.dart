@@ -64,7 +64,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         key: scaffoldKey,
         backgroundColor: Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
           automaticallyImplyLeading: false,
           title: Column(
             mainAxisSize: MainAxisSize.max,
