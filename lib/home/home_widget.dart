@@ -1,14 +1,17 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key});
+  const HomeWidget({Key? key}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -49,7 +52,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
@@ -58,7 +61,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 34.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 34.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -73,13 +76,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             106.0, 0.0, 0.0, 0.0),
                         child: Container(
                           width: 103.0,
                           height: 35.0,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF393939),
+                            color: Color(0xFF393939),
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: InkWell(
@@ -101,12 +104,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Sora',
-                                        color: const Color(0xFFD7FC70),
+                                        color: Color(0xFFD7FC70),
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.account_balance_wallet_outlined,
                                   color: Color(0xFFD7FC70),
                                   size: 30.0,
@@ -120,7 +123,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 23.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 23.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -132,7 +135,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(18.0),
                           border: Border.all(
-                            color: const Color(0xFFD7FC70),
+                            color: Color(0xFFD7FC70),
                           ),
                         ),
                         child: Row(
@@ -157,7 +160,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         width: 275.0,
                         height: 80.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFD7FC70),
+                          color: Color(0xFFD7FC70),
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                         child: Row(
@@ -167,7 +170,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 12.0, 24.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -187,7 +190,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 10.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -207,7 +210,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 ),
                               ],
                             ),
-                            const Padding(
+                            Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: Icon(
@@ -224,7 +227,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(26.0, 25.0, 21.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(26.0, 25.0, 21.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -233,7 +236,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         'Live Challenges',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFFFBFBFB),
+                              color: Color(0xFFFBFBFB),
                               fontSize: 16.0,
                               fontWeight: FontWeight.w600,
                             ),
@@ -242,7 +245,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         'Seel All',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFF808080),
+                              color: Color(0xFF808080),
                               fontSize: 12.0,
                               fontWeight: FontWeight.w500,
                             ),
@@ -251,7 +254,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -260,7 +263,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         width: 330.0,
                         height: 184.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF111111),
+                          color: Color(0xFF111111),
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
@@ -269,7 +272,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ),
                           borderRadius: BorderRadius.circular(16.0),
                           border: Border.all(
-                            color: const Color(0xFF5B5B5B),
+                            color: Color(0xFF5B5B5B),
                           ),
                         ),
                       ),
@@ -279,7 +282,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Container(
                   width: 329.0,
                   height: 42.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFFD7FC70),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
@@ -293,7 +296,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'NBA 2K',
                           style:
@@ -305,7 +308,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 50.0,
                         child: VerticalDivider(
                           thickness: 1.0,
@@ -323,12 +326,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(79.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(79.0, 0.0, 0.0, 0.0),
                         child: Container(
                           width: 58.0,
                           height: 28.0,
                           decoration: BoxDecoration(
-                            color: const Color(0x5B5B5B33),
+                            color: Color(0x5B5B5B33),
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                           child: Row(
@@ -356,7 +359,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -370,7 +373,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mike Smith\n W 12 - L 3',
                           style:
@@ -384,7 +387,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 0.0, 2.0),
+                            EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 0.0, 2.0),
                         child: Container(
                           width: 60.0,
                           height: 60.0,
@@ -401,7 +404,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             width: 50.0,
                             height: 50.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -413,7 +416,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'VS',
                           style:
@@ -427,7 +430,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 0.0, 2.0),
+                            EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 0.0, 2.0),
                         child: Container(
                           width: 60.0,
                           height: 60.0,
@@ -444,7 +447,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             width: 50.0,
                             height: 50.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -456,7 +459,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'JaredJCarter\nW 34 - L 31',
                           style:
@@ -472,26 +475,26 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Upcoming Event',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             160.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -507,7 +510,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: const Color(0xFF808080),
+                                  color: Color(0xFF808080),
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -518,19 +521,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 11.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 11.0, 0.0, 0.0),
                   child: Stack(
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Container(
                               width: 215.0,
                               height: 198.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF2F2F2F),
                               ),
                               child: Column(
@@ -549,7 +552,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             9.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Overwatch \nChampionship',
@@ -568,12 +571,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Container(
                                 width: 215.0,
                                 height: 198.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF2F2F2F),
                                 ),
                                 child: Column(
@@ -593,7 +596,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   9.0, 10.0, 0.0, 0.0),
                                           child: Text(
                                             'Age of Empires \nII World Cup',
@@ -616,7 +619,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 120.0, 0.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -629,13 +632,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 140.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -644,7 +647,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.home_filled,
                                       color: Colors.black,
                                       size: 24.0,
@@ -668,7 +671,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -678,7 +681,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.grid_view_rounded,
                                       color: Colors.black,
                                       size: 24.0,
@@ -702,7 +705,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -720,7 +723,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       borderRadius: 20.0,
                                       borderWidth: 1.0,
                                       buttonSize: 40.0,
-                                      icon: const FaIcon(
+                                      icon: FaIcon(
                                         FontAwesomeIcons.smileWink,
                                         color: Colors.black,
                                         size: 24.0,
@@ -745,7 +748,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -755,7 +758,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.person_outlined,
                                       color: Colors.black,
                                       size: 24.0,
@@ -764,7 +767,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       context.pushNamed(
                                         'Pofile',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.bottomToTop,
@@ -796,33 +799,33 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(26.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Open Challenges',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             160.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Sell All',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFF808080),
+                                    color: Color(0xFF808080),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -838,7 +841,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ClipRRect(
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
                             bottomRight: Radius.circular(0.0),
                             topLeft: Radius.circular(16.0),
@@ -855,11 +858,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(30.0, 147.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(30.0, 147.0, 0.0, 0.0),
                       child: Container(
                         width: 329.0,
                         height: 42.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0xFF2F2F2F),
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(0.0),
@@ -872,7 +875,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'NBA 2K',
@@ -880,13 +883,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                       fontSize: 17.0,
                                       fontWeight: FontWeight.w800,
                                     ),
                               ),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 50.0,
                               child: VerticalDivider(
                                 thickness: 1.0,
@@ -899,7 +902,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 17.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -910,11 +913,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(30.0, 190.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(30.0, 190.0, 0.0, 0.0),
                       child: Container(
                         width: 329.0,
                         height: 60.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0xFFD7FC70),
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(16.0),
@@ -927,7 +930,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 2.0, 0.0, 2.0),
                               child: Container(
                                 width: 60.0,
@@ -945,7 +948,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   width: 50.0,
                                   height: 50.0,
                                   clipBehavior: Clip.antiAlias,
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
                                   child: Image.asset(
@@ -956,7 +959,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'JaredJCarter\nW 34 - L 31',
@@ -971,13 +974,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   50.0, 0.0, 0.0, 0.0),
                               child: Container(
                                 width: 82.0,
                                 height: 28.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF464646),
+                                  color: Color(0xFF464646),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
                                 child: Row(
@@ -990,7 +993,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Sora',
-                                            color: const Color(0xFFD7FC70),
+                                            color: Color(0xFFD7FC70),
                                             fontSize: 25.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -1019,11 +1022,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
                   child: Container(
                     width: 329.0,
                     height: 42.0,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xFF2F2F2F),
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(0.0),
@@ -1036,7 +1039,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Madden 23K',
@@ -1044,13 +1047,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: const Color(0xFFFBFBFB),
+                                  color: Color(0xFFFBFBFB),
                                   fontSize: 17.0,
                                   fontWeight: FontWeight.w800,
                                 ),
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 50.0,
                           child: VerticalDivider(
                             thickness: 1.0,
@@ -1062,7 +1065,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 17.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -1074,7 +1077,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -1088,7 +1091,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 2.0, 0.0, 2.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 2.0, 0.0, 2.0),
                         child: Container(
                           width: 60.0,
                           height: 60.0,
@@ -1105,7 +1108,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             width: 50.0,
                             height: 50.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -1117,13 +1120,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'JaredJCarter\nW 34 - L 31',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Sora',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1131,12 +1134,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
                         child: Container(
                           width: 82.0,
                           height: 28.0,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF464646),
+                            color: Color(0xFF464646),
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                           child: Row(
@@ -1149,7 +1152,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Sora',
-                                      color: const Color(0xFFD7FC70),
+                                      color: Color(0xFFD7FC70),
                                       fontSize: 25.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -1176,11 +1179,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 22.0, 0.0, 0.0),
                   child: Container(
                     width: 329.0,
                     height: 42.0,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xFF2F2F2F),
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(0.0),
@@ -1193,7 +1196,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'NBA 2K',
@@ -1201,13 +1204,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: const Color(0xFFFBFBFB),
+                                  color: Color(0xFFFBFBFB),
                                   fontSize: 17.0,
                                   fontWeight: FontWeight.w800,
                                 ),
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 50.0,
                           child: VerticalDivider(
                             thickness: 1.0,
@@ -1219,7 +1222,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 17.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -1231,7 +1234,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -1245,7 +1248,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 2.0, 0.0, 2.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 2.0, 0.0, 2.0),
                         child: Container(
                           width: 60.0,
                           height: 60.0,
@@ -1262,7 +1265,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             width: 50.0,
                             height: 50.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -1274,13 +1277,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'JaredJCarter\nW 34 - L 31',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Sora',
-                                    color: const Color(0xFFFBFBFB),
+                                    color: Color(0xFFFBFBFB),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1288,12 +1291,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
                         child: Container(
                           width: 82.0,
                           height: 28.0,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF464646),
+                            color: Color(0xFF464646),
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                           child: Row(
@@ -1306,7 +1309,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Sora',
-                                      color: const Color(0xFFD7FC70),
+                                      color: Color(0xFFD7FC70),
                                       fontSize: 25.0,
                                       fontWeight: FontWeight.w600,
                                     ),

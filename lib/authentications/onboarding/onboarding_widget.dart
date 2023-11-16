@@ -3,11 +3,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'onboarding_model.dart';
 export 'onboarding_model.dart';
 
 class OnboardingWidget extends StatefulWidget {
-  const OnboardingWidget({super.key});
+  const OnboardingWidget({Key? key}) : super(key: key);
 
   @override
   _OnboardingWidgetState createState() => _OnboardingWidgetState();
@@ -48,7 +50,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         body: SafeArea(
           top: true,
           child: Column(
@@ -56,7 +58,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 83.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 83.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +97,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
               Container(
                 width: double.infinity,
                 height: 341.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Color(0xFF111111),
                 ),
                 child: Column(
@@ -103,7 +105,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -114,7 +116,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Sora',
-                                  color: const Color(0xFFFBFBFB),
+                                  color: Color(0xFFFBFBFB),
                                   fontSize: 24.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -124,15 +126,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     39.0, 0.0, 39.0, 0.0),
                                 child: Text(
                                   'Browse thousands of games. Find what you love, effortlessly.',
@@ -141,7 +143,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFF808080),
+                                        color: Color(0xFF808080),
                                       ),
                                 ),
                               ),
@@ -152,7 +154,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pushNamed('SignUp');
@@ -161,18 +163,18 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 58.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFD7FC70),
+                          color: Color(0xFFD7FC70),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Inter',
                                     color: Colors.black,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -182,7 +184,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -193,12 +195,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: const Color(0xFF808080),
+                                  color: Color(0xFF808080),
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -214,7 +216,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),

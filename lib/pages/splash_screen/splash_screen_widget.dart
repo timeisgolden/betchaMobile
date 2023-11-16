@@ -1,12 +1,16 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'splash_screen_model.dart';
 export 'splash_screen_model.dart';
 
 class SplashScreenWidget extends StatefulWidget {
-  const SplashScreenWidget({super.key});
+  const SplashScreenWidget({Key? key}) : super(key: key);
 
   @override
   _SplashScreenWidgetState createState() => _SplashScreenWidgetState();
@@ -29,7 +33,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
       context.pushNamed(
         'Onboarding',
         extra: <String, dynamic>{
-          kTransitionInfoKey: const TransitionInfo(
+          kTransitionInfoKey: TransitionInfo(
             hasTransition: true,
             transitionType: PageTransitionType.fade,
             duration: Duration(milliseconds: 0),
@@ -63,7 +67,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         body: SafeArea(
           top: true,
           child: Column(

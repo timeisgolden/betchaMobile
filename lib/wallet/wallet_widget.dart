@@ -7,11 +7,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'wallet_model.dart';
 export 'wallet_model.dart';
 
 class WalletWidget extends StatefulWidget {
-  const WalletWidget({super.key});
+  const WalletWidget({Key? key}) : super(key: key);
 
   @override
   _WalletWidgetState createState() => _WalletWidgetState();
@@ -59,16 +61,16 @@ class _WalletWidgetState extends State<WalletWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF111111),
+          backgroundColor: Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -78,7 +80,7 @@ class _WalletWidgetState extends State<WalletWidget>
             },
           ),
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(80.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(80.0, 0.0, 0.0, 0.0),
             child: Text(
               'My Wallet',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -89,7 +91,7 @@ class _WalletWidgetState extends State<WalletWidget>
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -102,7 +104,7 @@ class _WalletWidgetState extends State<WalletWidget>
                 child: Column(
                   children: [
                     Align(
-                      alignment: const Alignment(0.0, 0),
+                      alignment: Alignment(0.0, 0),
                       child: FlutterFlowButtonTabBar(
                         useToggleButtonStyle: false,
                         labelStyle:
@@ -110,22 +112,22 @@ class _WalletWidgetState extends State<WalletWidget>
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w500,
                                 ),
-                        unselectedLabelStyle: const TextStyle(),
+                        unselectedLabelStyle: TextStyle(),
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         unselectedLabelColor:
                             FlutterFlowTheme.of(context).secondaryText,
-                        backgroundColor: const Color(0xFFD7FC70),
+                        backgroundColor: Color(0xFFD7FC70),
                         unselectedBackgroundColor: Colors.black,
-                        borderColor: const Color(0xFFD7FC70),
+                        borderColor: Color(0xFFD7FC70),
                         unselectedBorderColor: Colors.black,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
                         elevation: 0.0,
                         buttonMargin:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
-                        tabs: const [
+                            EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        tabs: [
                           Tab(
                             text: 'Current',
                           ),
@@ -145,7 +147,7 @@ class _WalletWidgetState extends State<WalletWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
                                   child: Container(
                                     width: 327.0,
@@ -159,7 +161,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 24.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -179,7 +181,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 10.0, 24.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -192,7 +194,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Sora',
                                                           color:
-                                                              const Color(0xFFD7FC70),
+                                                              Color(0xFFD7FC70),
                                                           fontSize: 32.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -206,7 +208,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 19.0, 29.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -219,7 +221,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Sora',
-                                              color: const Color(0xFFFBFBFB),
+                                              color: Color(0xFFFBFBFB),
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -230,7 +232,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Inter',
-                                              color: const Color(0xFFD7FC70),
+                                              color: Color(0xFFD7FC70),
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -238,18 +240,18 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 16.0, 29.0, 12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      const Icon(
+                                      Icon(
                                         Icons.location_on_outlined,
                                         color: Color(0xFFFBFBFB),
                                         size: 24.0,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -264,11 +266,11 @@ class _WalletWidgetState extends State<WalletWidget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFFFBFBFB),
+                                                            Color(0xFFFBFBFB),
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 7.0, 0.0, 0.0),
                                               child: Text(
                                                 '+201554215707',
@@ -278,7 +280,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFFFBFBFB),
+                                                              Color(0xFFFBFBFB),
                                                         ),
                                               ),
                                             ),
@@ -288,17 +290,17 @@ class _WalletWidgetState extends State<WalletWidget>
                                     ],
                                   ),
                                 ),
-                                const Divider(
+                                Divider(
                                   thickness: 1.0,
                                   color: Color(0xFF232323),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     height: 102.0,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Colors.black,
                                     ),
                                     child: Column(
@@ -306,7 +308,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -319,7 +321,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFFFBFBFB),
+                                                              Color(0xFFFBFBFB),
                                                           fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -330,7 +332,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: Container(
                                             width: 327.0,
@@ -340,7 +342,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
                                               border: Border.all(
-                                                color: const Color(0xFFFBFBFB),
+                                                color: Color(0xFFFBFBFB),
                                               ),
                                             ),
                                             child: Row(
@@ -349,7 +351,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                 Theme(
                                                   data: ThemeData(
                                                     checkboxTheme:
-                                                        const CheckboxThemeData(
+                                                        CheckboxThemeData(
                                                       visualDensity:
                                                           VisualDensity.compact,
                                                       materialTapTargetSize:
@@ -372,12 +374,12 @@ class _WalletWidgetState extends State<WalletWidget>
                                                               newValue!);
                                                     },
                                                     activeColor:
-                                                        const Color(0xFFD7FC70),
+                                                        Color(0xFFD7FC70),
                                                     checkColor: Colors.black,
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -388,21 +390,21 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFFFBFBFB),
+                                                              Color(0xFFFBFBFB),
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           105.0, 0.0, 0.0, 0.0),
                                                   child: FlutterFlowIconButton(
                                                     borderRadius: 20.0,
                                                     borderWidth: 1.0,
                                                     buttonSize: 40.0,
-                                                    icon: const FaIcon(
+                                                    icon: FaIcon(
                                                       FontAwesomeIcons
                                                           .solidCreditCard,
                                                       color: Color(0xFFFBFBFB),
@@ -423,18 +425,18 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Container(
                                     width: 327.0,
                                     height: 1.0,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Color(0xFF232323),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 33.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -454,7 +456,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 24.0, 28.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
@@ -463,7 +465,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       color: Colors.black,
                                       borderRadius: BorderRadius.circular(16.0),
                                       border: Border.all(
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                     ),
                                     child: Row(
@@ -473,7 +475,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Card Number',
@@ -481,7 +483,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFFFBFBFB),
+                                                  color: Color(0xFFFBFBFB),
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -489,7 +491,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 16.0, 0.0),
                                           child: ClipRRect(
                                             borderRadius:
@@ -507,7 +509,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 24.0, 28.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
@@ -516,7 +518,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       color: Colors.black,
                                       borderRadius: BorderRadius.circular(16.0),
                                       border: Border.all(
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                     ),
                                     child: Row(
@@ -526,7 +528,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Card Holder',
@@ -534,7 +536,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFFFBFBFB),
+                                                  color: Color(0xFFFBFBFB),
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -545,7 +547,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -560,14 +562,14 @@ class _WalletWidgetState extends State<WalletWidget>
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                           border: Border.all(
-                                            color: const Color(0xFFFBFBFB),
+                                            color: Color(0xFFFBFBFB),
                                           ),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -578,7 +580,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFFFBFBFB),
+                                                              Color(0xFFFBFBFB),
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -595,14 +597,14 @@ class _WalletWidgetState extends State<WalletWidget>
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                           border: Border.all(
-                                            color: const Color(0xFFFBFBFB),
+                                            color: Color(0xFFFBFBFB),
                                           ),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -613,7 +615,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFFFBFBFB),
+                                                              Color(0xFFFBFBFB),
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -626,7 +628,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 87.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -637,7 +639,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Inter',
-                                              color: const Color(0xFFFBFBFB),
+                                              color: Color(0xFFFBFBFB),
                                               fontSize: 16.0,
                                             ),
                                       ),
@@ -645,7 +647,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       28.0, 24.0, 28.0, 0.0),
                                   child: Container(
                                     width: 327.0,
@@ -654,11 +656,11 @@ class _WalletWidgetState extends State<WalletWidget>
                                       color: Colors.black,
                                       borderRadius: BorderRadius.circular(0.0),
                                       border: Border.all(
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           22.0, 0.0, 21.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -667,7 +669,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'Card Holder',
@@ -676,7 +678,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: const Color(0xFFFBFBFB),
+                                                    color: Color(0xFFFBFBFB),
                                                     fontSize: 16.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -684,7 +686,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               '#500',
@@ -693,7 +695,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: const Color(0xFFFBFBFB),
+                                                    color: Color(0xFFFBFBFB),
                                                     fontSize: 16.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -705,7 +707,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 32.0, 24.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -726,13 +728,13 @@ class _WalletWidgetState extends State<WalletWidget>
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: SizedBox(
+                                              child: Container(
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
                                                         0.6,
                                                 child:
-                                                    const SucessfulcheckoutWidget(),
+                                                    SucessfulcheckoutWidget(),
                                               ),
                                             ),
                                           );
@@ -743,12 +745,12 @@ class _WalletWidgetState extends State<WalletWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 58.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFD7FC70),
+                                      color: Color(0xFFD7FC70),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -756,7 +758,7 @@ class _WalletWidgetState extends State<WalletWidget>
                                             color: Colors.black,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

@@ -1,14 +1,17 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'order_details_model.dart';
 export 'order_details_model.dart';
 
 class OrderDetailsWidget extends StatefulWidget {
-  const OrderDetailsWidget({super.key});
+  const OrderDetailsWidget({Key? key}) : super(key: key);
 
   @override
   _OrderDetailsWidgetState createState() => _OrderDetailsWidgetState();
@@ -49,16 +52,16 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF111111),
+          backgroundColor: Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -68,18 +71,18 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
             },
           ),
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
             child: Text(
               'Wager Details',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Sora',
-                    color: const Color(0xFFFBFBFB),
+                    color: Color(0xFFFBFBFB),
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -90,7 +93,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -104,7 +107,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'GC092921',
                           style:
@@ -120,7 +123,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 11.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 11.0, 24.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 425.0,
@@ -132,18 +135,18 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               31.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.adjust_sharp,
                                 color: Color(0xFFD7FC70),
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Wager Requested',
@@ -151,7 +154,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -160,12 +163,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 60.0,
                                 child: StyledVerticalDivider(
                                   thickness: 2.0,
@@ -174,7 +177,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     23.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '#D7FC70',
@@ -182,7 +185,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                 ),
                               ),
@@ -190,7 +193,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               27.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -215,12 +218,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     setState(() =>
                                         _model.checkboxValue1 = newValue!);
                                   },
-                                  activeColor: const Color(0xFFD7FC70),
+                                  activeColor: Color(0xFFD7FC70),
                                   checkColor: Colors.black,
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Wager Started',
@@ -228,7 +231,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -237,12 +240,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 60.0,
                                 child: StyledVerticalDivider(
                                   thickness: 2.0,
@@ -251,7 +254,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     23.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '9:15 PM June 1, 2021v',
@@ -259,7 +262,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                 ),
                               ),
@@ -267,7 +270,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               27.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -292,12 +295,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     setState(() =>
                                         _model.checkboxValue2 = newValue!);
                                   },
-                                  activeColor: const Color(0xFFD7FC70),
+                                  activeColor: Color(0xFFD7FC70),
                                   checkColor: Colors.black,
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Wager Completed (WON)',
@@ -305,7 +308,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -314,12 +317,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 70.0,
                                 child: StyledVerticalDivider(
                                   thickness: 2.0,
@@ -328,7 +331,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     23.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '8:00 AM May 30, 2021',
@@ -336,7 +339,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                 ),
                               ),
@@ -344,7 +347,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               27.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -369,12 +372,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     setState(() =>
                                         _model.checkboxValue3 = newValue!);
                                   },
-                                  activeColor: const Color(0xFFD7FC70),
+                                  activeColor: Color(0xFFD7FC70),
                                   checkColor: Colors.black,
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Wager Paid',
@@ -382,7 +385,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontWeight: FontWeight.w600,
                                       ),
                                 ),
@@ -391,12 +394,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 0.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 40.0,
                                 child: StyledVerticalDivider(
                                   thickness: 2.0,
@@ -405,7 +408,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     23.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '8:00 AM May 30, 2021',
@@ -413,7 +416,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                       ),
                                 ),
                               ),
@@ -426,7 +429,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(25.0, 74.0, 21.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(25.0, 74.0, 21.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -435,7 +438,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                         'Wager Summary',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFFFBFBFB),
+                              color: Color(0xFFFBFBFB),
                               fontSize: 14.0,
                             ),
                       ),
@@ -443,7 +446,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                         '(1 Item)',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFFFBFBFB),
+                              color: Color(0xFFFBFBFB),
                               fontSize: 14.0,
                             ),
                       ),
@@ -452,7 +455,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 177.0,
@@ -464,7 +467,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 16.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -475,11 +478,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     149.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '\$125',
@@ -487,7 +490,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -497,7 +500,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 10.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -508,11 +511,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     149.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '\$5  ',
@@ -520,7 +523,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -530,7 +533,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               33.0, 10.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -541,11 +544,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     168.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '\$0  ',
@@ -553,7 +556,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -563,7 +566,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               21.0, 27.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -574,11 +577,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: const Color(0xFFFBFBFB),
+                                      color: Color(0xFFFBFBFB),
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     192.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   '\$130',
@@ -586,7 +589,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFFBFBFB),
+                                        color: Color(0xFFFBFBFB),
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.w600,
                                       ),

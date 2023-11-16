@@ -4,11 +4,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'resetyourpassword_model.dart';
 export 'resetyourpassword_model.dart';
 
 class ResetyourpasswordWidget extends StatefulWidget {
-  const ResetyourpasswordWidget({super.key});
+  const ResetyourpasswordWidget({Key? key}) : super(key: key);
 
   @override
   _ResetyourpasswordWidgetState createState() =>
@@ -56,16 +58,16 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF111111),
+        backgroundColor: Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF111111),
+          backgroundColor: Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -75,7 +77,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
             },
           ),
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(49.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(49.0, 0.0, 0.0, 0.0),
             child: Text(
               'Rest your Password',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -86,7 +88,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -96,7 +98,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +107,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                       'Create New Password ',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Sora',
-                            color: const Color(0xFFFBFBFB),
+                            color: Color(0xFFFBFBFB),
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -114,13 +116,13 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Flexible(
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         child: Text(
                           'Create a new password, please don’t forget this one too.',
@@ -128,7 +130,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xFF808080),
+                                    color: Color(0xFF808080),
                                   ),
                         ),
                       ),
@@ -137,7 +139,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.textController1,
                   focusNode: _model.textFieldFocusNode1,
@@ -148,11 +150,11 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFF636363),
+                              color: Color(0xFF636363),
                             ),
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0xFF232323),
                         width: 2.0,
                       ),
@@ -180,8 +182,8 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    prefixIcon: const Icon(
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                    prefixIcon: Icon(
                       Icons.remove_red_eye_outlined,
                       color: Color(0xFF808080),
                       size: 24.0,
@@ -196,7 +198,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                         _model.passwordVisibility1
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
-                        color: const Color(0xFF808080),
+                        color: Color(0xFF808080),
                         size: 24.0,
                       ),
                     ),
@@ -207,7 +209,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.textController2,
                   focusNode: _model.textFieldFocusNode2,
@@ -218,11 +220,11 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFF636363),
+                              color: Color(0xFF636363),
                             ),
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0xFF232323),
                         width: 2.0,
                       ),
@@ -250,8 +252,8 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    prefixIcon: const Icon(
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                    prefixIcon: Icon(
                       Icons.remove_red_eye_outlined,
                       color: Color(0xFF808080),
                       size: 24.0,
@@ -266,7 +268,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                         _model.passwordVisibility2
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
-                        color: const Color(0xFF808080),
+                        color: Color(0xFF808080),
                         size: 24.0,
                       ),
                     ),
@@ -277,7 +279,7 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
@@ -287,16 +289,16 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
                     width: double.infinity,
                     height: 58.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFD7FC70),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFD7FC70),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.black,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
