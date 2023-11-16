@@ -1,17 +1,14 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'payment_method_model.dart';
 export 'payment_method_model.dart';
 
 class PaymentMethodWidget extends StatefulWidget {
-  const PaymentMethodWidget({Key? key}) : super(key: key);
+  const PaymentMethodWidget({super.key});
 
   @override
   _PaymentMethodWidgetState createState() => _PaymentMethodWidgetState();
@@ -52,16 +49,16 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: const Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: const Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -71,18 +68,18 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
             },
           ),
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
             child: Text(
               'Payment Method',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Sora',
-                    color: Color(0xFFFBFBFB),
+                    color: const Color(0xFFFBFBFB),
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -92,13 +89,13 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'My Cards',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -113,7 +110,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 198.0,
@@ -125,7 +122,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 14.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -140,7 +137,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   14.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -152,11 +149,11 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFFBFBFB),
+                                          color: const Color(0xFFFBFBFB),
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       '01/25',
@@ -164,7 +161,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
-                                            color: Color(0xFF808080),
+                                            color: const Color(0xFF808080),
                                           ),
                                     ),
                                   ),
@@ -172,7 +169,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   76.0, 0.0, 0.0, 0.0),
                               child: Theme(
                                 data: ThemeData(
@@ -194,7 +191,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                     setState(() =>
                                         _model.checkboxValue1 = newValue!);
                                   },
-                                  activeColor: Color(0xFFD7FC70),
+                                  activeColor: const Color(0xFFD7FC70),
                                   checkColor: Colors.black,
                                 ),
                               ),
@@ -203,7 +200,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 14.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -218,7 +215,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   14.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -230,11 +227,11 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFFBFBFB),
+                                          color: const Color(0xFFFBFBFB),
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       '01/25',
@@ -242,7 +239,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
-                                            color: Color(0xFF808080),
+                                            color: const Color(0xFF808080),
                                           ),
                                     ),
                                   ),
@@ -250,7 +247,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   76.0, 0.0, 0.0, 0.0),
                               child: Theme(
                                 data: ThemeData(
@@ -272,7 +269,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                     setState(() =>
                                         _model.checkboxValue2 = newValue!);
                                   },
-                                  activeColor: Color(0xFFD7FC70),
+                                  activeColor: const Color(0xFFD7FC70),
                                   checkColor: Colors.black,
                                 ),
                               ),
@@ -281,7 +278,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -291,7 +288,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               borderRadius: 20.0,
                               borderWidth: 1.0,
                               buttonSize: 40.0,
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.solidCreditCard,
                                 color: Color(0xFFFBFBFB),
                                 size: 24.0,
@@ -301,7 +298,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                               },
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -313,12 +310,12 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFFBFBFB),
+                                          color: const Color(0xFFFBFBFB),
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       'Add your credit or depit Card',
@@ -326,7 +323,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
-                                            color: Color(0xFF636363),
+                                            color: const Color(0xFF636363),
                                             fontSize: 14.0,
                                           ),
                                     ),
@@ -334,7 +331,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                                 ],
                               ),
                             ),
-                            Padding(
+                            const Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Icon(

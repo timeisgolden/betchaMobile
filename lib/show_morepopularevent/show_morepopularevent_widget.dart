@@ -1,16 +1,13 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'show_morepopularevent_model.dart';
 export 'show_morepopularevent_model.dart';
 
 class ShowMorepopulareventWidget extends StatefulWidget {
-  const ShowMorepopulareventWidget({Key? key}) : super(key: key);
+  const ShowMorepopulareventWidget({super.key});
 
   @override
   _ShowMorepopulareventWidgetState createState() =>
@@ -53,16 +50,16 @@ class _ShowMorepopulareventWidgetState
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: const Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: const Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -75,12 +72,12 @@ class _ShowMorepopulareventWidgetState
             'Upcoming Events',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Sora',
-                  color: Color(0xFFFBFBFB),
+                  color: const Color(0xFFFBFBFB),
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -94,7 +91,7 @@ class _ShowMorepopulareventWidgetState
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -122,12 +119,12 @@ class _ShowMorepopulareventWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               '08/23',
@@ -135,14 +132,14 @@ class _ShowMorepopulareventWidgetState
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Sora',
-                                    color: Color(0xFFEBEBEB),
+                                    color: const Color(0xFFEBEBEB),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 242.0, 0.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
@@ -162,7 +159,7 @@ class _ShowMorepopulareventWidgetState
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -183,7 +180,7 @@ class _ShowMorepopulareventWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Dota Pro Circuit 2021: S1 -\n China Upper Division',
@@ -191,7 +188,7 @@ class _ShowMorepopulareventWidgetState
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Sora',
-                                  color: Color(0xFFEBEBEB),
+                                  color: const Color(0xFFEBEBEB),
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -205,7 +202,7 @@ class _ShowMorepopulareventWidgetState
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -224,12 +221,12 @@ class _ShowMorepopulareventWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               '08/23',
@@ -237,14 +234,14 @@ class _ShowMorepopulareventWidgetState
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Sora',
-                                    color: Color(0xFFEBEBEB),
+                                    color: const Color(0xFFEBEBEB),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 242.0, 0.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
@@ -264,7 +261,7 @@ class _ShowMorepopulareventWidgetState
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -278,13 +275,13 @@ class _ShowMorepopulareventWidgetState
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Dota Pro Circuit 2021: S1 -\n China Upper Division',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Sora',
-                                    color: Color(0xFFEBEBEB),
+                                    color: const Color(0xFFEBEBEB),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -297,7 +294,7 @@ class _ShowMorepopulareventWidgetState
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 37.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -316,12 +313,12 @@ class _ShowMorepopulareventWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 0.0, 0.0),
                             child: Text(
                               '08/23',
@@ -329,14 +326,14 @@ class _ShowMorepopulareventWidgetState
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Sora',
-                                    color: Color(0xFFEBEBEB),
+                                    color: const Color(0xFFEBEBEB),
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 242.0, 0.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
@@ -356,7 +353,7 @@ class _ShowMorepopulareventWidgetState
                 Container(
                   width: 329.0,
                   height: 60.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF5B5B5B),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
@@ -370,13 +367,13 @@ class _ShowMorepopulareventWidgetState
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Dota Pro Circuit 2021: S1 -\n China Upper Division',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Sora',
-                                    color: Color(0xFFEBEBEB),
+                                    color: const Color(0xFFEBEBEB),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                   ),

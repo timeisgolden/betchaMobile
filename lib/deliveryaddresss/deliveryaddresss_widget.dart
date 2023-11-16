@@ -5,13 +5,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'deliveryaddresss_model.dart';
 export 'deliveryaddresss_model.dart';
 
 class DeliveryaddresssWidget extends StatefulWidget {
-  const DeliveryaddresssWidget({Key? key}) : super(key: key);
+  const DeliveryaddresssWidget({super.key});
 
   @override
   _DeliveryaddresssWidgetState createState() => _DeliveryaddresssWidgetState();
@@ -52,16 +50,16 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: const Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: const Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -71,18 +69,18 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
             },
           ),
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
             child: Text(
               'Address',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Sora',
-                    color: Color(0xFFFBFBFB),
+                    color: const Color(0xFFFBFBFB),
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -92,7 +90,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 200.0,
@@ -100,14 +98,14 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(16.0),
                     border: Border.all(
-                      color: Color(0xFFD7FC70),
+                      color: const Color(0xFFD7FC70),
                     ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -119,7 +117,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFFD7FC70),
+                                    color: const Color(0xFFD7FC70),
                                     fontWeight: FontWeight.w600,
                                   ),
                             ),
@@ -142,7 +140,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                                   setState(
                                       () => _model.checkboxValue = newValue!);
                                 },
-                                activeColor: Color(0xFFD7FC70),
+                                activeColor: const Color(0xFFD7FC70),
                                 checkColor: Colors.black,
                               ),
                             ),
@@ -150,7 +148,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 6.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -162,7 +160,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFFFBFBFB),
+                                    color: const Color(0xFFFBFBFB),
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -171,7 +169,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 5.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -182,7 +180,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFF808080),
+                                    color: const Color(0xFF808080),
                                     fontSize: 12.0,
                                   ),
                             ),
@@ -190,7 +188,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 15.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -201,7 +199,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.0),
                                 border: Border.all(
-                                  color: Color(0xFFD7FC70),
+                                  color: const Color(0xFFD7FC70),
                                 ),
                               ),
                               child: Row(
@@ -214,7 +212,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFD7FC70),
+                                          color: const Color(0xFFD7FC70),
                                           fontSize: 12.0,
                                         ),
                                   ),
@@ -222,13 +220,13 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: FlutterFlowIconButton(
                                 borderRadius: 20.0,
                                 borderWidth: 1.0,
                                 buttonSize: 40.0,
-                                icon: FaIcon(
+                                icon: const FaIcon(
                                   FontAwesomeIcons.ellipsisH,
                                   color: Color(0xFFD7FC70),
                                   size: 24.0,
@@ -246,7 +244,7 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 314.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 314.0, 24.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
@@ -256,16 +254,16 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
                     width: double.infinity,
                     height: 58.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFFD7FC70),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: const Color(0xFFD7FC70),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.black,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

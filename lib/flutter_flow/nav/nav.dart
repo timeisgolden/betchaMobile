@@ -1,20 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,113 +72,113 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? const HomeWidget() : const OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
+              appStateNotifier.loggedIn ? const HomeWidget() : const OnboardingWidget(),
         ),
         FFRoute(
           name: 'SplashScreen',
           path: '/splashScreen',
-          builder: (context, params) => SplashScreenWidget(),
+          builder: (context, params) => const SplashScreenWidget(),
         ),
         FFRoute(
           name: 'Onboarding',
           path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+          builder: (context, params) => const OnboardingWidget(),
         ),
         FFRoute(
           name: 'SignIn',
           path: '/signIn',
-          builder: (context, params) => SignInWidget(),
+          builder: (context, params) => const SignInWidget(),
         ),
         FFRoute(
           name: 'SignUp',
           path: '/signUp',
-          builder: (context, params) => SignUpWidget(),
+          builder: (context, params) => const SignUpWidget(),
         ),
         FFRoute(
           name: 'Resetyourpassword',
           path: '/resetyourpassword',
-          builder: (context, params) => ResetyourpasswordWidget(),
+          builder: (context, params) => const ResetyourpasswordWidget(),
         ),
         FFRoute(
           name: 'PasswordRecovery',
           path: '/passwordRecovery',
-          builder: (context, params) => PasswordRecoveryWidget(),
+          builder: (context, params) => const PasswordRecoveryWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) => const HomeWidget(),
         ),
         FFRoute(
           name: 'Wallet',
           path: '/wallet',
-          builder: (context, params) => WalletWidget(),
+          builder: (context, params) => const WalletWidget(),
         ),
         FFRoute(
           name: 'Inbox',
           path: '/inbox',
-          builder: (context, params) => InboxWidget(),
+          builder: (context, params) => const InboxWidget(),
         ),
         FFRoute(
           name: 'Profile_Page',
           path: '/profilePage',
-          builder: (context, params) => ProfilePageWidget(),
+          builder: (context, params) => const ProfilePageWidget(),
         ),
         FFRoute(
           name: 'Pofile',
           path: '/pofile',
-          builder: (context, params) => PofileWidget(),
+          builder: (context, params) => const PofileWidget(),
         ),
         FFRoute(
           name: 'AccountInfo',
           path: '/accountInfo',
-          builder: (context, params) => AccountInfoWidget(),
+          builder: (context, params) => const AccountInfoWidget(),
         ),
         FFRoute(
           name: 'PaymentMethod',
           path: '/paymentMethod',
-          builder: (context, params) => PaymentMethodWidget(),
+          builder: (context, params) => const PaymentMethodWidget(),
         ),
         FFRoute(
           name: 'NewCard',
           path: '/newCard',
-          builder: (context, params) => NewCardWidget(),
+          builder: (context, params) => const NewCardWidget(),
         ),
         FFRoute(
           name: 'Deliveryaddresss',
           path: '/deliveryaddresss',
-          builder: (context, params) => DeliveryaddresssWidget(),
+          builder: (context, params) => const DeliveryaddresssWidget(),
         ),
         FFRoute(
           name: 'Notifications',
           path: '/notifications',
-          builder: (context, params) => NotificationsWidget(),
+          builder: (context, params) => const NotificationsWidget(),
         ),
         FFRoute(
           name: 'Orders-1',
           path: '/orders1',
-          builder: (context, params) => Orders1Widget(),
+          builder: (context, params) => const Orders1Widget(),
         ),
         FFRoute(
           name: 'OrderDetails',
           path: '/orderDetails',
-          builder: (context, params) => OrderDetailsWidget(),
+          builder: (context, params) => const OrderDetailsWidget(),
         ),
         FFRoute(
           name: 'ShowMorepopularevent',
           path: '/showMorepopularevent',
-          builder: (context, params) => ShowMorepopulareventWidget(),
+          builder: (context, params) => const ShowMorepopulareventWidget(),
         ),
         FFRoute(
           name: 'EventDetail',
           path: '/eventDetail',
-          builder: (context, params) => EventDetailWidget(),
+          builder: (context, params) => const EventDetailWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -407,7 +400,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

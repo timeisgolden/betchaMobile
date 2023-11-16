@@ -1,17 +1,14 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'inbox_model.dart';
 export 'inbox_model.dart';
 
 class InboxWidget extends StatefulWidget {
-  const InboxWidget({Key? key}) : super(key: key);
+  const InboxWidget({super.key});
 
   @override
   _InboxWidgetState createState() => _InboxWidgetState();
@@ -60,7 +57,7 @@ class _InboxWidgetState extends State<InboxWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +75,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 164.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +93,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -114,14 +111,14 @@ class _InboxWidgetState extends State<InboxWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               35.0, 0.0, 35.0, 0.0),
                           child: Text(
                             'You don\'t have any\n notification at this time.',
@@ -140,7 +137,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 94.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 94.0, 0.0, 0.0),
                   child: Stack(
                     children: [
                       Row(
@@ -159,13 +156,13 @@ class _InboxWidgetState extends State<InboxWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             35.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -175,7 +172,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.home_filled,
                                       color: Colors.black,
                                       size: 24.0,
@@ -199,7 +196,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -209,7 +206,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.grid_view_rounded,
                                       color: Colors.black,
                                       size: 24.0,
@@ -233,7 +230,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -243,7 +240,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: FaIcon(
+                                    icon: const FaIcon(
                                       FontAwesomeIcons.smileWink,
                                       color: Colors.black,
                                       size: 24.0,
@@ -267,7 +264,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   27.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -277,7 +274,7 @@ class _InboxWidgetState extends State<InboxWidget> {
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.person_outlined,
                                       color: Colors.black,
                                       size: 24.0,

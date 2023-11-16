@@ -10,7 +10,7 @@ import 'event_detail_model.dart';
 export 'event_detail_model.dart';
 
 class EventDetailWidget extends StatefulWidget {
-  const EventDetailWidget({Key? key}) : super(key: key);
+  const EventDetailWidget({super.key});
 
   @override
   _EventDetailWidgetState createState() => _EventDetailWidgetState();
@@ -58,7 +58,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0x0000F111),
+        backgroundColor: const Color(0x0000F111),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -78,7 +78,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 334.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 334.0, 0.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 625.7,
@@ -102,13 +102,13 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Dota Pro Circuit 2021: S1 - China \nUpper Division',
@@ -116,7 +116,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFEBEBEB),
+                                          color: const Color(0xFFEBEBEB),
                                           fontSize: 17.0,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -126,13 +126,13 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 52.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Monday, Oct 23rd, 2023',
@@ -140,7 +140,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFC2E365),
+                                          color: const Color(0xFFC2E365),
                                         ),
                                   ),
                                 ),
@@ -152,7 +152,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '#C2E365',
@@ -160,7 +160,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFFC2E365),
+                                          color: const Color(0xFFC2E365),
                                         ),
                                   ),
                                 ),
@@ -168,7 +168,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -179,24 +179,24 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Montserrat',
-                                        color: Color(0xFF98999A),
+                                        color: const Color(0xFF98999A),
                                         fontSize: 15.0,
                                       ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 4.0,
                                     height: 4.0,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0xFF98999A),
                                       shape: BoxShape.circle,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '72/100',
@@ -204,25 +204,25 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: Color(0xFF98999A),
+                                          color: const Color(0xFF98999A),
                                           fontSize: 15.0,
                                         ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 4.0,
                                     height: 4.0,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color(0xFF98999A),
                                       shape: BoxShape.circle,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Prize pool',
@@ -230,7 +230,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Montserrat',
-                                          color: Color(0xFF98999A),
+                                          color: const Color(0xFF98999A),
                                           fontSize: 15.0,
                                         ),
                                   ),
@@ -239,7 +239,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 19.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -248,7 +248,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                   width: 154.0,
                                   height: 39.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFF464646),
+                                    color: const Color(0xFF464646),
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   child: Row(
@@ -266,7 +266,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           'Like',
@@ -283,13 +283,13 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 0.0),
                                   child: Container(
                                     width: 154.0,
                                     height: 39.0,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF464646),
+                                      color: const Color(0xFF464646),
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     child: Row(
@@ -309,7 +309,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Like',
@@ -335,21 +335,21 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment(0.0, 0),
+                              alignment: const Alignment(0.0, 0),
                               child: TabBar(
                                 labelColor: Colors.white,
-                                unselectedLabelColor: Color(0xFF50545D),
+                                unselectedLabelColor: const Color(0xFF50545D),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
                                       fontFamily: 'Inter',
                                       fontSize: 14.0,
                                     ),
-                                unselectedLabelStyle: TextStyle(),
-                                indicatorColor: Color(0xBACDD7FC70),
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                unselectedLabelStyle: const TextStyle(),
+                                indicatorColor: const Color(0xbacdd7fc70),
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 4.0, 4.0, 4.0),
-                                tabs: [
+                                tabs: const [
                                   Tab(
                                     text: 'Info',
                                   ),
@@ -376,7 +376,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                       Flexible(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -393,7 +393,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            Color(0xFFA8ADB7),
+                                                            const Color(0xFFA8ADB7),
                                                         fontSize: 15.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -457,7 +457,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 70.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 70.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -465,7 +465,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
                       borderRadius: 20.0,
                       borderWidth: 1.0,
                       buttonSize: 40.0,
-                      fillColor: Color(0xFF5B5B5B),
+                      fillColor: const Color(0xFF5B5B5B),
                       icon: Icon(
                         Icons.arrow_back,
                         color: FlutterFlowTheme.of(context).secondaryBackground,

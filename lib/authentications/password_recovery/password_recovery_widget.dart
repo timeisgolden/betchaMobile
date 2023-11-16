@@ -5,13 +5,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'password_recovery_model.dart';
 export 'password_recovery_model.dart';
 
 class PasswordRecoveryWidget extends StatefulWidget {
-  const PasswordRecoveryWidget({Key? key}) : super(key: key);
+  const PasswordRecoveryWidget({super.key});
 
   @override
   _PasswordRecoveryWidgetState createState() => _PasswordRecoveryWidgetState();
@@ -55,16 +53,16 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: const Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: const Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -74,7 +72,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
             },
           ),
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(49.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(49.0, 0.0, 0.0, 0.0),
             child: Text(
               'Forget Password',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -85,7 +83,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                   ),
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -95,7 +93,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 64.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -104,7 +102,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                       'Reset your Password',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Sora',
-                            color: Color(0xFFFBFBFB),
+                            color: const Color(0xFFFBFBFB),
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -113,13 +111,13 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Flexible(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         child: Text(
                           'We need your Phone number so we can send you the password reset code.',
@@ -127,7 +125,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFF808080),
+                                    color: const Color(0xFF808080),
                                   ),
                         ),
                       ),
@@ -136,7 +134,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
                 child: TextFormField(
                   controller: _model.emailTextController,
                   focusNode: _model.textFieldFocusNode,
@@ -146,11 +144,11 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Inter',
-                              color: Color(0xFF636363),
+                              color: const Color(0xFF636363),
                             ),
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color(0xFF232323),
                         width: 2.0,
                       ),
@@ -178,8 +176,8 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                    prefixIcon: Icon(
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                    prefixIcon: const Icon(
                       Icons.remove_red_eye_outlined,
                       color: Color(0xFF808080),
                       size: 24.0,
@@ -192,12 +190,12 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     if (_model.emailTextController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
+                        const SnackBar(
                           content: Text(
                             'Email required!',
                           ),
@@ -215,16 +213,16 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                     width: double.infinity,
                     height: 58.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFFD7FC70),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: const Color(0xFFD7FC70),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.black,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

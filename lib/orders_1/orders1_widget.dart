@@ -2,16 +2,13 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'orders1_model.dart';
 export 'orders1_model.dart';
 
 class Orders1Widget extends StatefulWidget {
-  const Orders1Widget({Key? key}) : super(key: key);
+  const Orders1Widget({super.key});
 
   @override
   _Orders1WidgetState createState() => _Orders1WidgetState();
@@ -59,16 +56,16 @@ class _Orders1WidgetState extends State<Orders1Widget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: const Color(0xFF111111),
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: const Color(0xFF111111),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.chevron_left,
               color: Colors.white,
               size: 30.0,
@@ -78,18 +75,18 @@ class _Orders1WidgetState extends State<Orders1Widget>
             },
           ),
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
             child: Text(
               'Wager History',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Sora',
-                    color: Color(0xFFFBFBFB),
+                    color: const Color(0xFFFBFBFB),
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   ),
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -102,25 +99,25 @@ class _Orders1WidgetState extends State<Orders1Widget>
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment(0.0, 0),
+                      alignment: const Alignment(0.0, 0),
                       child: FlutterFlowButtonTabBar(
                         useToggleButtonStyle: false,
                         labelStyle: FlutterFlowTheme.of(context).titleMedium,
-                        unselectedLabelStyle: TextStyle(),
+                        unselectedLabelStyle: const TextStyle(),
                         labelColor: Colors.black,
-                        unselectedLabelColor: Color(0xFFFBFBFB),
-                        backgroundColor: Color(0xFFD7FC70),
+                        unselectedLabelColor: const Color(0xFFFBFBFB),
+                        backgroundColor: const Color(0xFFD7FC70),
                         unselectedBackgroundColor: Colors.black,
-                        borderColor: Color(0xFFD7FC70),
+                        borderColor: const Color(0xFFD7FC70),
                         unselectedBorderColor: Colors.black,
                         borderWidth: 2.0,
                         borderRadius: 8.0,
                         elevation: 0.0,
                         buttonMargin:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
-                        tabs: [
+                            const EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        tabs: const [
                           Tab(
                             text: 'Currency',
                           ),
@@ -139,7 +136,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 24.0, 24.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -152,13 +149,13 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -169,7 +166,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              Color(0xFF29AE29),
+                                                              const Color(0xFF29AE29),
                                                           fontSize: 12.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -180,7 +177,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 19.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -199,7 +196,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -211,7 +208,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: Color(0xFFD7FC70),
+                                                    color: const Color(0xFFD7FC70),
                                                     fontSize: 32.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -220,7 +217,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 7.0, 24.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -235,7 +232,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            Color(0xFFFFFFCC),
+                                                            const Color(0xFFFFFFCC),
                                                         fontSize: 12.0,
                                                       ),
                                             ),
@@ -243,7 +240,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                               borderRadius: 20.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons
                                                     .keyboard_arrow_right_outlined,
                                                 color: Color(0xFFFBFBFB),
@@ -261,7 +258,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 24.0, 24.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -274,7 +271,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -288,7 +285,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: Color(0xFFFFC62A),
+                                                    color: const Color(0xFFFFC62A),
                                                     fontSize: 12.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -297,7 +294,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 19.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -316,7 +313,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -328,7 +325,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: Color(0xFFD7FC70),
+                                                    color: const Color(0xFFD7FC70),
                                                     fontSize: 32.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -337,7 +334,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 7.0, 24.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -352,7 +349,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            Color(0xFFFFFFCC),
+                                                            const Color(0xFFFFFFCC),
                                                         fontSize: 12.0,
                                                       ),
                                             ),
@@ -361,7 +358,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                               borderRadius: 20.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons
                                                     .keyboard_arrow_right_outlined,
                                                 color: Color(0xFFFBFBFB),
@@ -379,7 +376,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 24.0, 24.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -392,13 +389,13 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 24.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -409,7 +406,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              Color(0xFF16BCF0),
+                                                              const Color(0xFF16BCF0),
                                                           fontSize: 12.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -420,7 +417,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 19.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -439,7 +436,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -451,7 +448,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Inter',
-                                                    color: Color(0xFFD7FC70),
+                                                    color: const Color(0xFFD7FC70),
                                                     fontSize: 32.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -460,7 +457,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             24.0, 7.0, 24.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -475,7 +472,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            Color(0xFFFFFFCC),
+                                                            const Color(0xFFFFFFCC),
                                                         fontSize: 12.0,
                                                       ),
                                             ),
@@ -484,7 +481,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
                                               borderRadius: 20.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons
                                                     .keyboard_arrow_right_outlined,
                                                 color: Color(0xFFFBFBFB),

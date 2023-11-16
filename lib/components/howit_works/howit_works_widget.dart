@@ -2,14 +2,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'howit_works_model.dart';
 export 'howit_works_model.dart';
 
 class HowitWorksWidget extends StatefulWidget {
-  const HowitWorksWidget({Key? key}) : super(key: key);
+  const HowitWorksWidget({super.key});
 
   @override
   _HowitWorksWidgetState createState() => _HowitWorksWidgetState();
@@ -42,7 +39,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF1F222A),
       ),
       child: Column(
@@ -51,7 +48,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
           Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 9.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 9.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -69,10 +66,10 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-1.46, -8.47),
+                alignment: const AlignmentDirectional(-1.46, -8.47),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(120.0, 50.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(120.0, 50.0, 0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
@@ -87,7 +84,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
             ],
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +93,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
                   'I Betcha Can’t!',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Urbanist',
-                        color: Color(0xFFD7FC70),
+                        color: const Color(0xFFD7FC70),
                         fontSize: 28.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -105,7 +102,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(32.0, 16.0, 32.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(32.0, 16.0, 32.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +122,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
             child: FFButtonWidget(
               onPressed: () {
                 print('Button pressed ...');
@@ -134,15 +131,15 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 58.0,
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: Color(0xFFD7FC70),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: const Color(0xFFD7FC70),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Inter',
                       color: Colors.black,
                     ),
                 elevation: 3.0,
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),
@@ -151,7 +148,7 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 18.0, 24.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 18.0, 24.0, 0.0),
             child: FFButtonWidget(
               onPressed: () {
                 print('Button pressed ...');
@@ -160,15 +157,15 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 58.0,
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: Color(0xFF35383F),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: const Color(0xFF35383F),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Inter',
                       color: Colors.white,
                     ),
                 elevation: 3.0,
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),
