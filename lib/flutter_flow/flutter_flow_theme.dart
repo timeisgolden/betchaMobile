@@ -56,6 +56,13 @@ abstract class FlutterFlowTheme {
 
   late Color primaryBtnText;
   late Color lineColor;
+  late Color customColor2;
+  late Color customColor3;
+  late Color customColor4;
+  late Color customColor1;
+  late Color customColor5;
+  late Color borderColor;
+  late Color customColor6;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -128,12 +135,12 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
+  late Color primary = const Color(0xFFD7FC70);
   late Color secondary = const Color(0xFF39D2C0);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFE0E3E7);
   late Color primaryText = const Color(0xFF14181B);
-  late Color secondaryText = const Color(0xFF57636C);
+  late Color secondaryText = const Color(0xFF636363);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color accent1 = const Color(0x4C4B39EF);
@@ -147,6 +154,13 @@ class LightModeTheme extends FlutterFlowTheme {
 
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFFE0E3E7);
+  late Color customColor2 = Color(0xFF5B5B5B);
+  late Color customColor3 = Color(0xFF2F2F2F);
+  late Color customColor4 = Color(0xFF808080);
+  late Color customColor1 = Color(0xFF080808);
+  late Color customColor5 = Color(0xFF111111);
+  late Color borderColor = Color(0xFF232323);
+  late Color customColor6 = Color(0xFF464646);
 }
 
 abstract class Typography {
@@ -321,6 +335,13 @@ class DarkModeTheme extends FlutterFlowTheme {
 
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFF22282F);
+  late Color customColor2 = Color(0xFFA8F964);
+  late Color customColor3 = Color(0xFF414AD2);
+  late Color customColor4 = Color(0xFFB70F56);
+  late Color customColor1 = Color(0xFF9FCBAD);
+  late Color customColor5 = Color(0xFF0A8480);
+  late Color borderColor = Color(0xFF505C6D);
+  late Color customColor6 = Color(0xFF8C5CE8);
 }
 
 extension TextStyleHelper on TextStyle {

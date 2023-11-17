@@ -143,11 +143,13 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                         child: Text(
                           'We need your Phone number so we can send you the password reset code.',
                           textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFF808080),
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Inter',
+                                color:
+                                    FlutterFlowTheme.of(context).customColor4,
+                              ),
                         ),
                       ),
                     ),
@@ -165,12 +167,12 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Inter',
-                              color: Color(0xFF636363),
+                              color: FlutterFlowTheme.of(context).secondaryText,
                             ),
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xFF232323),
+                        color: FlutterFlowTheme.of(context).borderColor,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
@@ -204,7 +206,10 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                       size: 24.0,
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: Colors.white,
+                      ),
                   keyboardType: TextInputType.emailAddress,
                   validator:
                       _model.emailTextControllerValidator.asValidator(context),
@@ -237,7 +242,7 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFFD7FC70),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
                           color: Colors.black,

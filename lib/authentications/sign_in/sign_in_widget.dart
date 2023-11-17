@@ -67,27 +67,24 @@ class _SignInWidgetState extends State<SignInWidget> {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderColor: FlutterFlowTheme.of(context).lineColor,
-                      borderRadius: 10.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: Icon(
-                        Icons.chevron_left,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () async {
-                        context.pop();
-                      },
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  FlutterFlowIconButton(
+                    borderColor: FlutterFlowTheme.of(context).lineColor,
+                    borderRadius: 10.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: Icon(
+                      Icons.chevron_left,
+                      color: Colors.white,
+                      size: 30.0,
                     ),
-                  ],
-                ),
+                    onPressed: () async {
+                      context.pop();
+                    },
+                  ),
+                ],
               ),
             ],
           ),
@@ -148,7 +145,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         'Enter your details below',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: Color(0xFF808080),
+                              color: FlutterFlowTheme.of(context).customColor4,
                               fontSize: 14.0,
                               fontWeight: FontWeight.normal,
                             ),
@@ -165,7 +162,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: FlutterFlowTheme.of(context).labelSmall,
+                      labelStyle:
+                          FlutterFlowTheme.of(context).labelSmall.override(
+                                fontFamily: 'Inter',
+                                fontSize: 14.0,
+                              ),
                       hintStyle: FlutterFlowTheme.of(context)
                           .labelMedium
                           .override(
@@ -175,7 +176,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0xFF232323),
+                          color: FlutterFlowTheme.of(context).borderColor,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -227,11 +228,12 @@ class _SignInWidgetState extends State<SignInWidget> {
                     obscureText: !_model.passwordSignupVisibility,
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                color: Color(0xFF636363),
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
+                            fontFamily: 'Inter',
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                          ),
                       hintStyle: FlutterFlowTheme.of(context)
                           .labelMedium
                           .override(
@@ -241,7 +243,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0xFF232323),
+                          color: FlutterFlowTheme.of(context).borderColor,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -323,7 +325,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFD7FC70),
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',
@@ -348,7 +350,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         'Don\'t have an account?',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: Color(0xFF808080),
+                              color: FlutterFlowTheme.of(context).customColor4,
                               fontWeight: FontWeight.w500,
                             ),
                       ),
@@ -394,12 +396,14 @@ class _SignInWidgetState extends State<SignInWidget> {
                         },
                         child: Text(
                           'Forgot Password?',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: Color(0xFF808080),
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Inter',
+                                color:
+                                    FlutterFlowTheme.of(context).customColor4,
+                                fontWeight: FontWeight.w500,
+                              ),
                         ),
                       ),
                     ],

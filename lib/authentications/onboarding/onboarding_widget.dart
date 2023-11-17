@@ -144,7 +144,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: Color(0xFF808080),
+                                          color: FlutterFlowTheme.of(context)
+                                              .customColor4,
                                         ),
                                   ),
                                 ),
@@ -168,7 +169,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                 24.0, 0.0, 24.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFD7FC70),
+                            color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -197,7 +198,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Inter',
-                                    color: Color(0xFF808080),
+                                    color: FlutterFlowTheme.of(context)
+                                        .customColor4,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
