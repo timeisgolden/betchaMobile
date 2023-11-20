@@ -173,28 +173,28 @@ class _PasswordRecoveryWidgetState extends State<PasswordRecoveryWidget> {
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).borderColor,
-                        width: 2.0,
+                        width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
+                        width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     errorBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
+                        width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
+                        width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),

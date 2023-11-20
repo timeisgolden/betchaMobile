@@ -60,6 +60,15 @@ class _CardUpcomingEventWidgetState extends State<CardUpcomingEventWidget> {
           children: [
             Stack(
               children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.asset(
+                    'assets/images/Rectangle_19.png',
+                    width: double.infinity,
+                    height: 108.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Align(
                   alignment: AlignmentDirectional(-1.00, -1.00),
                   child: Padding(
@@ -72,15 +81,6 @@ class _CardUpcomingEventWidgetState extends State<CardUpcomingEventWidget> {
                             fontSize: 12.0,
                           ),
                     ),
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Image.asset(
-                    'assets/images/Rectangle_19.png',
-                    width: double.infinity,
-                    height: 108.0,
-                    fit: BoxFit.cover,
                   ),
                 ),
                 Align(

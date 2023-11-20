@@ -159,7 +159,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color customColor4 = Color(0xFF808080);
   late Color customColor1 = Color(0xFF080808);
   late Color customColor5 = Color(0xFF111111);
-  late Color borderColor = Color(0xFF232323);
+  late Color borderColor = Color(0xFFB2B2B2);
   late Color customColor6 = Color(0xFF464646);
 }
 

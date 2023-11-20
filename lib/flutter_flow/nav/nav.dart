@@ -371,10 +371,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryText,
+                  color: Colors.black,
                   child: Image.asset(
-                    'assets/images/betcha-white_1.png',
-                    fit: BoxFit.contain,
+                    'assets/images/betcha-logo.png',
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : page;

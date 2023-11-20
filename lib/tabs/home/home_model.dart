@@ -1,5 +1,6 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/card_challenge/card_challenge_widget.dart';
+import '/components/card_live_challenge/card_live_challenge_widget.dart';
 import '/components/card_upcoming_event/card_upcoming_event_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -15,6 +16,8 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for CardLiveChallenge component.
+  late CardLiveChallengeModel cardLiveChallengeModel;
   // Model for CardUpcomingEvent component.
   late CardUpcomingEventModel cardUpcomingEventModel1;
   // Model for CardUpcomingEvent component.
@@ -27,6 +30,8 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    cardLiveChallengeModel =
+        createModel(context, () => CardLiveChallengeModel());
     cardUpcomingEventModel1 =
         createModel(context, () => CardUpcomingEventModel());
     cardUpcomingEventModel2 =
@@ -38,6 +43,7 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    cardLiveChallengeModel.dispose();
     cardUpcomingEventModel1.dispose();
     cardUpcomingEventModel2.dispose();
     cardChallengeModel.dispose();
