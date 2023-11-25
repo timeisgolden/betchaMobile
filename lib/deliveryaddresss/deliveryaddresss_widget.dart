@@ -26,6 +26,9 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DeliveryaddresssModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'Deliveryaddresss'});
   }
 
   @override
@@ -67,6 +70,8 @@ class _DeliveryaddresssWidgetState extends State<DeliveryaddresssWidget> {
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('DELIVERYADDRESSS_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

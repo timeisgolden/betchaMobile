@@ -2,8 +2,10 @@ import '/components/bottom_navigation_component/bottom_navigation_component_widg
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -21,17 +23,32 @@ class _InboxWidgetState extends State<InboxWidget> {
   late InboxModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late StreamSubscription<bool> _keyboardVisibilitySubscription;
+  bool _isKeyboardVisible = false;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => InboxModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Inbox'});
+    if (!isWeb) {
+      _keyboardVisibilitySubscription =
+          KeyboardVisibilityController().onChange.listen((bool visible) {
+        setState(() {
+          _isKeyboardVisible = visible;
+        });
+      });
+    }
   }
 
   @override
   void dispose() {
     _model.dispose();
 
+    if (!isWeb) {
+      _keyboardVisibilitySubscription.cancel();
+    }
     super.dispose();
   }
 
@@ -157,16 +174,19 @@ class _InboxWidgetState extends State<InboxWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.00, 1.00),
-                  child: wrapWithModel(
-                    model: _model.bottomNavigationComponentModel,
-                    updateCallback: () => setState(() {}),
-                    child: BottomNavigationComponentWidget(
-                      selectedPageIndex: 3,
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  Align(
+                    alignment: AlignmentDirectional(0.00, 1.00),
+                    child: wrapWithModel(
+                      model: _model.bottomNavigationComponentModel,
+                      updateCallback: () => setState(() {}),
+                      child: BottomNavigationComponentWidget(
+                        selectedPageIndex: 4,
+                      ),
                     ),
                   ),
-                ),
               ],
             ),
           ),

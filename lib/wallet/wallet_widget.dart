@@ -30,6 +30,7 @@ class _WalletWidgetState extends State<WalletWidget>
     super.initState();
     _model = createModel(context, () => WalletModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Wallet'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -76,6 +77,8 @@ class _WalletWidgetState extends State<WalletWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('WALLET_PAGE_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -711,6 +714,9 @@ class _WalletWidgetState extends State<WalletWidget>
                                       24.0, 32.0, 24.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'WALLET_PAGE_RELOAD_WALLET_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_bottom_sheet');
                                       await showModalBottomSheet(
                                         isScrollControlled: true,
                                         backgroundColor: Colors.transparent,

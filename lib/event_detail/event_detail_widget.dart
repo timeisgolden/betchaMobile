@@ -27,6 +27,7 @@ class _EventDetailWidgetState extends State<EventDetailWidget>
     super.initState();
     _model = createModel(context, () => EventDetailModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'EventDetail'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 4,

@@ -26,6 +26,9 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PaymentMethodModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'PaymentMethod'});
   }
 
   @override
@@ -67,6 +70,8 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('PAYMENT_METHOD_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

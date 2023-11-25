@@ -27,6 +27,9 @@ class _ShowMorepopulareventWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => ShowMorepopulareventModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'ShowMorepopularevent'});
   }
 
   @override
@@ -68,6 +71,8 @@ class _ShowMorepopulareventWidgetState
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('SHOW_MOREPOPULAREVENT_chevron_left_ICN_O');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),
@@ -105,6 +110,10 @@ class _ShowMorepopulareventWidgetState
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'SHOW_MOREPOPULAREVENT_Image_086u2d2r_ON_');
+                              logFirebaseEvent('Image_navigate_to');
+
                               context.pushNamed('EventDetail');
                             },
                             child: ClipRRect(
@@ -177,6 +186,10 @@ class _ShowMorepopulareventWidgetState
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent(
+                          'SHOW_MOREPOPULAREVENT_Row_jsux3e7d_ON_TA');
+                      logFirebaseEvent('Row_navigate_to');
+
                       context.pushNamed('EventDetail');
                     },
                     child: Row(

@@ -26,6 +26,8 @@ class _NewCardWidgetState extends State<NewCardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NewCardModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'NewCard'});
   }
 
   @override
@@ -67,6 +69,8 @@ class _NewCardWidgetState extends State<NewCardWidget> {
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('NEW_CARD_PAGE_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

@@ -6,6 +6,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
+import '/backend/schema/enums/enums.dart';
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
@@ -138,9 +140,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ProfilePageWidget(),
         ),
         FFRoute(
-          name: 'Pofile',
-          path: '/pofile',
-          builder: (context, params) => PofileWidget(),
+          name: 'MainPofile',
+          path: '/mainPofile',
+          builder: (context, params) => MainPofileWidget(),
         ),
         FFRoute(
           name: 'AccountInfo',
@@ -191,6 +193,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Discover',
           path: '/discover',
           builder: (context, params) => DiscoverWidget(),
+        ),
+        FFRoute(
+          name: 'Friends',
+          path: '/friends',
+          builder: (context, params) => FriendsWidget(),
+        ),
+        FFRoute(
+          name: 'OtherProfileDetail',
+          path: '/otherProfileDetail',
+          asyncParams: {
+            'userRef': getDoc(['Users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => OtherProfileDetailWidget(
+            userRef: params.getParam('userRef', ParamType.Document),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -372,9 +389,12 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: Colors.black,
-                  child: Image.asset(
-                    'assets/images/betcha-logo.png',
-                    fit: BoxFit.fitWidth,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/betcha-logo.png',
+                      width: MediaQuery.sizeOf(context).width * 0.7,
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 )
               : page;

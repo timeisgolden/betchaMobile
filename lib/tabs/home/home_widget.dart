@@ -6,8 +6,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
@@ -24,17 +26,32 @@ class _HomeWidgetState extends State<HomeWidget> {
   late HomeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late StreamSubscription<bool> _keyboardVisibilitySubscription;
+  bool _isKeyboardVisible = false;
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Home'});
+    if (!isWeb) {
+      _keyboardVisibilitySubscription =
+          KeyboardVisibilityController().onChange.listen((bool visible) {
+        setState(() {
+          _isKeyboardVisible = visible;
+        });
+      });
+    }
   }
 
   @override
   void dispose() {
     _model.dispose();
 
+    if (!isWeb) {
+      _keyboardVisibilitySubscription.cancel();
+    }
     super.dispose();
   }
 
@@ -97,6 +114,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'HOME_PAGE_Row_al5cqvkb_ON_TAP');
+                                    logFirebaseEvent('Row_navigate_to');
+
                                     context.pushNamed('Wallet');
                                   },
                                   child: Row(
@@ -324,6 +345,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_Text_1im40e82_ON_TAP');
+                                  logFirebaseEvent('Text_navigate_to');
+
                                   context.pushNamed('ShowMorepopularevent');
                                 },
                                 child: Text(
@@ -749,16 +774,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.00, 1.00),
-                  child: wrapWithModel(
-                    model: _model.bottomNavigationComponentModel,
-                    updateCallback: () => setState(() {}),
-                    child: BottomNavigationComponentWidget(
-                      selectedPageIndex: 1,
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  Align(
+                    alignment: AlignmentDirectional(0.00, 1.00),
+                    child: wrapWithModel(
+                      model: _model.bottomNavigationComponentModel,
+                      updateCallback: () => setState(() {}),
+                      child: BottomNavigationComponentWidget(
+                        selectedPageIndex: 1,
+                      ),
                     ),
                   ),
-                ),
               ],
             ),
           ),

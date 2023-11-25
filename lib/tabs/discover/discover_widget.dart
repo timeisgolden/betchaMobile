@@ -5,12 +5,14 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'discover_model.dart';
@@ -28,6 +30,8 @@ class _DiscoverWidgetState extends State<DiscoverWidget>
   late DiscoverModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late StreamSubscription<bool> _keyboardVisibilitySubscription;
+  bool _isKeyboardVisible = false;
 
   final animationsMap = {
     'containerOnPageLoadAnimation1': AnimationInfo(
@@ -117,12 +121,25 @@ class _DiscoverWidgetState extends State<DiscoverWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => DiscoverModel());
+
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Discover'});
+    if (!isWeb) {
+      _keyboardVisibilitySubscription =
+          KeyboardVisibilityController().onChange.listen((bool visible) {
+        setState(() {
+          _isKeyboardVisible = visible;
+        });
+      });
+    }
   }
 
   @override
   void dispose() {
     _model.dispose();
 
+    if (!isWeb) {
+      _keyboardVisibilitySubscription.cancel();
+    }
     super.dispose();
   }
 
@@ -1736,16 +1753,19 @@ class _DiscoverWidgetState extends State<DiscoverWidget>
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.00, 1.00),
-                  child: wrapWithModel(
-                    model: _model.bottomNavigationComponentModel,
-                    updateCallback: () => setState(() {}),
-                    child: BottomNavigationComponentWidget(
-                      selectedPageIndex: 2,
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  Align(
+                    alignment: AlignmentDirectional(0.00, 1.00),
+                    child: wrapWithModel(
+                      model: _model.bottomNavigationComponentModel,
+                      updateCallback: () => setState(() {}),
+                      child: BottomNavigationComponentWidget(
+                        selectedPageIndex: 3,
+                      ),
                     ),
                   ),
-                ),
               ],
             ),
           ),

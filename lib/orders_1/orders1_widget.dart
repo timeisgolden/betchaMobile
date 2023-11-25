@@ -28,6 +28,7 @@ class _Orders1WidgetState extends State<Orders1Widget>
     super.initState();
     _model = createModel(context, () => Orders1Model());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Orders-1'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -74,6 +75,8 @@ class _Orders1WidgetState extends State<Orders1Widget>
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('ORDERS_1_PAGE_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

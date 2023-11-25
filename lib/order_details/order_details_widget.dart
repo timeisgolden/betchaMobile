@@ -26,6 +26,9 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OrderDetailsModel());
+
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'OrderDetails'});
   }
 
   @override
@@ -67,6 +70,8 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget> {
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('ORDER_DETAILS_chevron_left_ICN_ON_TAP');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

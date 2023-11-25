@@ -1,21 +1,21 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'notifications_widget.dart' show NotificationsWidget;
+import 'other_profile_detail_widget.dart' show OtherProfileDetailWidget;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class NotificationsModel extends FlutterFlowModel<NotificationsWidget> {
+class OtherProfileDetailModel
+    extends FlutterFlowModel<OtherProfileDetailWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for Switch widget.
-  bool? switchValue1;
-  // State field(s) for Switch widget.
-  bool? switchValue2;
 
   /// Initialization and disposal methods.
 

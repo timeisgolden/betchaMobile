@@ -27,6 +27,8 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
     super.initState();
     _model = createModel(context, () => ResetyourpasswordModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'Resetyourpassword'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -73,6 +75,8 @@ class _ResetyourpasswordWidgetState extends State<ResetyourpasswordWidget> {
               size: 30.0,
             ),
             onPressed: () async {
+              logFirebaseEvent('RESETYOURPASSWORD_chevron_left_ICN_ON_TA');
+              logFirebaseEvent('IconButton_navigate_back');
               context.pop();
             },
           ),

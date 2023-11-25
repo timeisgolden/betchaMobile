@@ -83,6 +83,10 @@ class _BottomNavigationComponentWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'BOTTOM_NAVIGATION_COMPONENT_TabHome_ON_T');
+                          logFirebaseEvent('TabHome_navigate_to');
+
                           context.goNamed(
                             'Home',
                             extra: <String, dynamic>{
@@ -114,18 +118,40 @@ class _BottomNavigationComponentWidgetState
                                       shape: BoxShape.circle,
                                     ),
                                   ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 6.0, 0.0, 6.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/Home_3.svg',
-                                      width: 24.0,
-                                      height: 24.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                Builder(
+                                  builder: (context) {
+                                    if (widget.selectedPageIndex == 1) {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/home.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/home-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -154,8 +180,12 @@ class _BottomNavigationComponentWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'BOTTOM_NAVIGATION_COMPONENT_TabFriends_O');
+                          logFirebaseEvent('TabFriends_navigate_to');
+
                           context.goNamed(
-                            'Discover',
+                            'Friends',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -185,24 +215,46 @@ class _BottomNavigationComponentWidgetState
                                       shape: BoxShape.circle,
                                     ),
                                   ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 6.0, 0.0, 6.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/elements.svg',
-                                      width: 24.0,
-                                      height: 24.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                Builder(
+                                  builder: (context) {
+                                    if (widget.selectedPageIndex == 2) {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/elements.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/elements-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
-                                    'Discover',
+                                    'Friends',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -225,8 +277,12 @@ class _BottomNavigationComponentWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'BOTTOM_NAVIGATION_COMPONENT_TabDiscover_');
+                          logFirebaseEvent('TabDiscover_navigate_to');
+
                           context.goNamed(
-                            'Inbox',
+                            'Discover',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -256,24 +312,46 @@ class _BottomNavigationComponentWidgetState
                                       shape: BoxShape.circle,
                                     ),
                                   ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 6.0, 0.0, 6.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/emotion-smile.svg',
-                                      width: 24.0,
-                                      height: 24.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                                Builder(
+                                  builder: (context) {
+                                    if (widget.selectedPageIndex == 3) {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/elements.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/elements-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
-                                    'Inbox',
+                                    'Discover',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -296,8 +374,12 @@ class _BottomNavigationComponentWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'BOTTOM_NAVIGATION_COMPONENT_TabInbox_ON_');
+                          logFirebaseEvent('TabInbox_navigate_to');
+
                           context.goNamed(
-                            'Pofile',
+                            'Inbox',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -327,18 +409,137 @@ class _BottomNavigationComponentWidgetState
                                       shape: BoxShape.circle,
                                     ),
                                   ),
+                                Builder(
+                                  builder: (context) {
+                                    if (widget.selectedPageIndex == 4) {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/smile-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/smile-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 6.0, 0.0, 6.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/profile.svg',
-                                      width: 24.0,
-                                      height: 24.0,
-                                      fit: BoxFit.cover,
+                                      0.0, 0.0, 0.0, 8.0),
+                                  child: Text(
+                                    'Inbox',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .customColor5,
+                                          fontSize: 11.0,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          logFirebaseEvent(
+                              'BOTTOM_NAVIGATION_COMPONENT_TabProfile_O');
+                          logFirebaseEvent('TabProfile_navigate_to');
+
+                          context.goNamed(
+                            'MainPofile',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
+                        },
+                        child: Container(
+                          width: 48.0,
+                          height: double.infinity,
+                          decoration: BoxDecoration(),
+                          child: Opacity(
+                            opacity: widget.selectedPageIndex == 5 ? 1.0 : 0.5,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                if (widget.selectedPageIndex == 5)
+                                  Container(
+                                    width: 6.0,
+                                    height: 6.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .customColor5,
+                                      shape: BoxShape.circle,
                                     ),
                                   ),
+                                Builder(
+                                  builder: (context) {
+                                    if (widget.selectedPageIndex == 5) {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/profile.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    } else {
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 6.0, 0.0, 6.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                          child: SvgPicture.asset(
+                                            'assets/images/profile-outline.svg',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(

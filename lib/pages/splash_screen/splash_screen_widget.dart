@@ -26,9 +26,14 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget> {
     super.initState();
     _model = createModel(context, () => SplashScreenModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'SplashScreen'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('SPLASH_SCREEN_SplashScreen_ON_INIT_STATE');
+      logFirebaseEvent('SplashScreen_wait__delay');
       await Future.delayed(const Duration(milliseconds: 4000));
+      logFirebaseEvent('SplashScreen_navigate_to');
 
       context.pushNamed(
         'Onboarding',
