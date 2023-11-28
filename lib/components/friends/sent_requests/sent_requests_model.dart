@@ -5,8 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'requests_component_widget.dart' show RequestsComponentWidget;
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'sent_requests_widget.dart' show SentRequestsWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class RequestsComponentModel extends FlutterFlowModel<RequestsComponentWidget> {
+class SentRequestsModel extends FlutterFlowModel<SentRequestsWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

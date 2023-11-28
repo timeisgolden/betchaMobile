@@ -39,6 +39,8 @@ class _CardLiveChallengeWidgetState extends State<CardLiveChallengeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [

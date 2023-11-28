@@ -42,18 +42,12 @@ class GamesRecord extends FirestoreRecord {
   List<String> get supportedPlatforms => _supportedPlatforms ?? const [];
   bool hasSupportedPlatforms() => _supportedPlatforms != null;
 
-  // "game_id" field.
-  String? _gameId;
-  String get gameId => _gameId ?? '';
-  bool hasGameId() => _gameId != null;
-
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
     _imageIcon = snapshotData['image_icon'] as String?;
     _gameModes = getDataList(snapshotData['game_modes']);
     _supportedPlatforms = getDataList(snapshotData['supported_platforms']);
-    _gameId = snapshotData['game_id'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -93,14 +87,12 @@ Map<String, dynamic> createGamesRecordData({
   String? name,
   String? description,
   String? imageIcon,
-  String? gameId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'name': name,
       'description': description,
       'image_icon': imageIcon,
-      'game_id': gameId,
     }.withoutNulls,
   );
 
@@ -117,8 +109,7 @@ class GamesRecordDocumentEquality implements Equality<GamesRecord> {
         e1?.description == e2?.description &&
         e1?.imageIcon == e2?.imageIcon &&
         listEquality.equals(e1?.gameModes, e2?.gameModes) &&
-        listEquality.equals(e1?.supportedPlatforms, e2?.supportedPlatforms) &&
-        e1?.gameId == e2?.gameId;
+        listEquality.equals(e1?.supportedPlatforms, e2?.supportedPlatforms);
   }
 
   @override
@@ -127,8 +118,7 @@ class GamesRecordDocumentEquality implements Equality<GamesRecord> {
         e?.description,
         e?.imageIcon,
         e?.gameModes,
-        e?.supportedPlatforms,
-        e?.gameId
+        e?.supportedPlatforms
       ]);
 
   @override

@@ -39,6 +39,8 @@ class _CardUpcomingEventWidgetState extends State<CardUpcomingEventWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: 216.0,
       height: 200.0,

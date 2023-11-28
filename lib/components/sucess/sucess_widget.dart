@@ -39,6 +39,8 @@ class _SucessWidgetState extends State<SucessWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Stack(
       children: [
         Container(

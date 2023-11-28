@@ -39,6 +39,8 @@ class _HowitWorksWidgetState extends State<HowitWorksWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: double.infinity,
       height: double.infinity,

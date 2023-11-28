@@ -47,6 +47,8 @@ class _BottomNavigationComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: 365.0,
       height: 120.0,

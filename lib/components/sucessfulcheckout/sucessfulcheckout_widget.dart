@@ -40,6 +40,8 @@ class _SucessfulcheckoutWidgetState extends State<SucessfulcheckoutWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Stack(
       children: [
         Container(

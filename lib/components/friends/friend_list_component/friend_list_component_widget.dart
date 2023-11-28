@@ -70,236 +70,296 @@ class _FriendListComponentWidgetState extends State<FriendListComponentWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-        child: StreamBuilder<List<FriendShipsRecord>>(
-          stream: queryFriendShipsRecord(
-            parent: currentUserReference,
-          ),
-          builder: (context, snapshot) {
-            // Customize what your widget looks like when it's loading.
-            if (!snapshot.hasData) {
-              return Center(
-                child: SizedBox(
-                  width: 50.0,
-                  height: 50.0,
-                  child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      FlutterFlowTheme.of(context).primary,
-                    ),
-                  ),
-                ),
-              );
-            }
-            List<FriendShipsRecord> listViewFriendShipsRecordList =
-                snapshot.data!;
-            return ListView.separated(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemCount: listViewFriendShipsRecordList.length,
-              separatorBuilder: (_, __) => SizedBox(height: 12.0),
-              itemBuilder: (context, listViewIndex) {
-                final listViewFriendShipsRecord =
-                    listViewFriendShipsRecordList[listViewIndex];
-                return Align(
-                  alignment: AlignmentDirectional(-1.00, 0.00),
-                  child: StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(
-                        listViewFriendShipsRecord.userId!),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
-                            ),
-                          ),
-                        );
-                      }
-                      final friendItemContainerUsersRecord = snapshot.data!;
-                      return Container(
-                        width: double.infinity,
-                        height: 80.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).customColor1,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 12.0, 12.0, 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      logFirebaseEvent(
-                                          'FRIEND_LIST_COMPONENT_ProfileImageContin');
-                                      logFirebaseEvent(
-                                          'ProfileImageContiner_navigate_to');
+    context.watch<FFAppState>();
 
-                                      context.pushNamed(
-                                        'OtherProfileDetail',
-                                        queryParameters: {
-                                          'userRef': serializeParam(
-                                            friendItemContainerUsersRecord,
-                                            ParamType.Document,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'userRef':
-                                              friendItemContainerUsersRecord,
-                                        },
-                                      );
-                                    },
-                                    child: Container(
+    return StreamBuilder<List<FriendShipsRecord>>(
+      stream: queryFriendShipsRecord(
+        parent: currentUserReference,
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: SizedBox(
+              width: 50.0,
+              height: 50.0,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  FlutterFlowTheme.of(context).primary,
+                ),
+              ),
+            ),
+          );
+        }
+        List<FriendShipsRecord> containerFriendShipsRecordList = snapshot.data!;
+        return Container(
+          decoration: BoxDecoration(),
+          child: Builder(
+            builder: (context) {
+              if (containerFriendShipsRecordList.length > 0) {
+                return Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                  child: Builder(
+                    builder: (context) {
+                      final friendLists =
+                          containerFriendShipsRecordList.toList();
+                      return ListView.separated(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: friendLists.length,
+                        separatorBuilder: (_, __) => SizedBox(height: 12.0),
+                        itemBuilder: (context, friendListsIndex) {
+                          final friendListsItem = friendLists[friendListsIndex];
+                          return Align(
+                            alignment: AlignmentDirectional(-1.00, 0.00),
+                            child: StreamBuilder<UsersRecord>(
+                              stream: UsersRecord.getDocument(
+                                  friendListsItem.userId!),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 1.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
                                         ),
                                       ),
-                                      child: Builder(
-                                        builder: (context) {
-                                          if (friendItemContainerUsersRecord
-                                                      .photoUrl !=
-                                                  null &&
-                                              friendItemContainerUsersRecord
-                                                      .photoUrl !=
-                                                  '') {
-                                            return ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                friendItemContainerUsersRecord
-                                                    .photoUrl,
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            );
-                                          } else {
-                                            return Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.00, 0.00),
-                                              child: Icon(
-                                                Icons.person,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                size: 40.0,
-                                              ),
-                                            );
-                                          }
-                                        },
-                                      ),
                                     ),
+                                  );
+                                }
+                                final friendItemContainerUsersRecord =
+                                    snapshot.data!;
+                                return Container(
+                                  width: double.infinity,
+                                  height: 80.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .customColor1,
                                   ),
-                                  Padding(
+                                  child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 0.0, 0.0),
-                                    child: Column(
+                                        12.0, 12.0, 12.0, 12.0),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                          CrossAxisAlignment.center,
                                       children: [
-                                        Text(
-                                          friendItemContainerUsersRecord
-                                                          .displayName !=
-                                                      null &&
-                                                  friendItemContainerUsersRecord
-                                                          .displayName !=
-                                                      ''
-                                              ? friendItemContainerUsersRecord
-                                                  .displayName
-                                              : 'No Name',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                logFirebaseEvent(
+                                                    'FRIEND_LIST_COMPONENT_ProfileImageContin');
+                                                logFirebaseEvent(
+                                                    'ProfileImageContiner_navigate_to');
+
+                                                context.pushNamed(
+                                                  'OtherProfileDetail',
+                                                  queryParameters: {
+                                                    'userRef': serializeParam(
+                                                      friendItemContainerUsersRecord,
+                                                      ParamType.Document,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'userRef':
+                                                        friendItemContainerUsersRecord,
+                                                  },
+                                                );
+                                              },
+                                              child: Container(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    width: 1.0,
+                                                  ),
+                                                ),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    if (friendItemContainerUsersRecord
+                                                                .photoUrl !=
+                                                            null &&
+                                                        friendItemContainerUsersRecord
+                                                                .photoUrl !=
+                                                            '') {
+                                                      return ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.network(
+                                                          friendItemContainerUsersRecord
+                                                              .photoUrl,
+                                                          width:
+                                                              double.infinity,
+                                                          height:
+                                                              double.infinity,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      return Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.00, 0.00),
+                                                        child: Icon(
+                                                          Icons.person,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 40.0,
+                                                        ),
+                                                      );
+                                                    }
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      12.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    friendItemContainerUsersRecord
+                                                                    .displayName !=
+                                                                null &&
+                                                            friendItemContainerUsersRecord
+                                                                    .displayName !=
+                                                                ''
+                                                        ? friendItemContainerUsersRecord
+                                                            .displayName
+                                                        : 'No Name',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                  ),
+                                                  Text(
+                                                    friendItemContainerUsersRecord
+                                                        .email,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                  ),
+                                                ].divide(SizedBox(height: 8.0)),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                        Text(
-                                          friendItemContainerUsersRecord.email,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                        Builder(
+                                          builder: (context) =>
+                                              FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 30.0,
+                                            buttonSize: 40.0,
+                                            icon: Icon(
+                                              Icons.keyboard_control,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'FRIEND_LIST_COMPONENT_keyboard_control_I');
+                                              logFirebaseEvent(
+                                                  'IconButton_alert_dialog');
+                                              await showAlignedDialog(
+                                                barrierColor:
+                                                    Colors.transparent,
+                                                context: context,
+                                                isGlobal: false,
+                                                avoidOverflow: true,
+                                                targetAnchor:
+                                                    AlignmentDirectional(
+                                                            1.0, -1.0)
+                                                        .resolve(
+                                                            Directionality.of(
+                                                                context)),
+                                                followerAnchor:
+                                                    AlignmentDirectional(
+                                                            1.0, -1.0)
+                                                        .resolve(
+                                                            Directionality.of(
+                                                                context)),
+                                                builder: (dialogContext) {
+                                                  return Material(
+                                                    color: Colors.transparent,
+                                                    child:
+                                                        DropdownForFriendWidget(
+                                                      friendshipRef:
+                                                          friendListsItem,
+                                                      userRef:
+                                                          friendItemContainerUsersRecord,
+                                                    ),
+                                                  );
+                                                },
+                                              ).then(
+                                                  (value) => setState(() {}));
+                                            },
+                                          ),
                                         ),
-                                      ].divide(SizedBox(height: 8.0)),
+                                      ].divide(SizedBox(width: 12.0)),
                                     ),
                                   ),
-                                ],
-                              ),
-                              Builder(
-                                builder: (context) => FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  buttonSize: 40.0,
-                                  icon: Icon(
-                                    Icons.keyboard_control,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 24.0,
-                                  ),
-                                  onPressed: () async {
-                                    logFirebaseEvent(
-                                        'FRIEND_LIST_COMPONENT_keyboard_control_I');
-                                    logFirebaseEvent('IconButton_alert_dialog');
-                                    await showAlignedDialog(
-                                      barrierColor: Colors.transparent,
-                                      context: context,
-                                      isGlobal: false,
-                                      avoidOverflow: true,
-                                      targetAnchor: AlignmentDirectional(
-                                              1.0, -1.0)
-                                          .resolve(Directionality.of(context)),
-                                      followerAnchor: AlignmentDirectional(
-                                              1.0, -1.0)
-                                          .resolve(Directionality.of(context)),
-                                      builder: (dialogContext) {
-                                        return Material(
-                                          color: Colors.transparent,
-                                          child: DropdownForFriendWidget(
-                                            friendshipRef:
-                                                listViewFriendShipsRecord,
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => setState(() {}));
-                                  },
-                                ),
-                              ),
-                            ].divide(SizedBox(width: 12.0)),
-                          ),
-                        ),
-                      ).animateOnPageLoad(
-                          animationsMap['containerOnPageLoadAnimation']!);
+                                ).animateOnPageLoad(animationsMap[
+                                    'containerOnPageLoadAnimation']!);
+                              },
+                            ),
+                          );
+                        },
+                      );
                     },
                   ),
                 );
-              },
-            );
-          },
-        ),
-      ),
+              } else {
+                return Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(12.0, 24.0, 12.0, 24.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'No friends at the moment.',
+                        textAlign: TextAlign.center,
+                        maxLines: 6,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                    ],
+                  ),
+                );
+              }
+            },
+          ),
+        );
+      },
     );
   }
 }

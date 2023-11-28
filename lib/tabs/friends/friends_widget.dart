@@ -1,6 +1,7 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/friends/friend_list_component/friend_list_component_widget.dart';
-import '/components/friends/requests_component/requests_component_widget.dart';
+import '/components/friends/received_requests/received_requests_widget.dart';
+import '/components/friends/sent_requests/sent_requests_widget.dart';
 import '/components/user_list_component/user_list_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -76,7 +77,7 @@ class _FriendsWidgetState extends State<FriendsWidget>
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Friends'});
     _model.tabBarController = TabController(
       vsync: this,
-      length: 3,
+      length: 4,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
   }
@@ -98,6 +99,8 @@ class _FriendsWidgetState extends State<FriendsWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -156,19 +159,10 @@ class _FriendsWidgetState extends State<FriendsWidget>
                                     FlutterFlowTheme.of(context).primaryText,
                                 unselectedLabelColor:
                                     FlutterFlowTheme.of(context).secondaryText,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 24.0,
-                                    ),
+                                labelStyle:
+                                    FlutterFlowTheme.of(context).titleMedium,
                                 unselectedLabelStyle:
-                                    FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          fontSize: 18.0,
-                                        ),
+                                    FlutterFlowTheme.of(context).titleMedium,
                                 indicatorColor:
                                     FlutterFlowTheme.of(context).primary,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -179,13 +173,16 @@ class _FriendsWidgetState extends State<FriendsWidget>
                                   ).animateOnPageLoad(animationsMap[
                                       'tabOnPageLoadAnimation1']!),
                                   Tab(
-                                    text: 'Requests',
+                                    text: 'Received',
                                   ).animateOnPageLoad(animationsMap[
                                       'tabOnPageLoadAnimation2']!),
                                   Tab(
-                                    text: 'All Users',
+                                    text: 'Sent',
                                   ).animateOnPageLoad(animationsMap[
                                       'tabOnPageLoadAnimation3']!),
+                                  Tab(
+                                    text: 'Users',
+                                  ),
                                 ],
                                 controller: _model.tabBarController,
                               ),
@@ -200,9 +197,14 @@ class _FriendsWidgetState extends State<FriendsWidget>
                                     child: FriendListComponentWidget(),
                                   ),
                                   wrapWithModel(
-                                    model: _model.requestsComponentModel,
+                                    model: _model.receivedRequestsModel,
                                     updateCallback: () => setState(() {}),
-                                    child: RequestsComponentWidget(),
+                                    child: ReceivedRequestsWidget(),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.sentRequestsModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: SentRequestsWidget(),
                                   ),
                                   wrapWithModel(
                                     model: _model.userListComponentModel,

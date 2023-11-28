@@ -1,6 +1,7 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/friends/friend_list_component/friend_list_component_widget.dart';
-import '/components/friends/requests_component/requests_component_widget.dart';
+import '/components/friends/received_requests/received_requests_widget.dart';
+import '/components/friends/sent_requests/sent_requests_widget.dart';
 import '/components/user_list_component/user_list_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -26,8 +27,10 @@ class FriendsModel extends FlutterFlowModel<FriendsWidget> {
 
   // Model for FriendListComponent component.
   late FriendListComponentModel friendListComponentModel;
-  // Model for RequestsComponent component.
-  late RequestsComponentModel requestsComponentModel;
+  // Model for ReceivedRequests component.
+  late ReceivedRequestsModel receivedRequestsModel;
+  // Model for SentRequests component.
+  late SentRequestsModel sentRequestsModel;
   // Model for UserListComponent component.
   late UserListComponentModel userListComponentModel;
   // Model for BottomNavigationComponent component.
@@ -38,8 +41,8 @@ class FriendsModel extends FlutterFlowModel<FriendsWidget> {
   void initState(BuildContext context) {
     friendListComponentModel =
         createModel(context, () => FriendListComponentModel());
-    requestsComponentModel =
-        createModel(context, () => RequestsComponentModel());
+    receivedRequestsModel = createModel(context, () => ReceivedRequestsModel());
+    sentRequestsModel = createModel(context, () => SentRequestsModel());
     userListComponentModel =
         createModel(context, () => UserListComponentModel());
     bottomNavigationComponentModel =
@@ -50,7 +53,8 @@ class FriendsModel extends FlutterFlowModel<FriendsWidget> {
     unfocusNode.dispose();
     tabBarController?.dispose();
     friendListComponentModel.dispose();
-    requestsComponentModel.dispose();
+    receivedRequestsModel.dispose();
+    sentRequestsModel.dispose();
     userListComponentModel.dispose();
     bottomNavigationComponentModel.dispose();
   }
