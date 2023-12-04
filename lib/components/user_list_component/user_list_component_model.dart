@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/profile_image_component/profile_image_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

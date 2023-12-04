@@ -1,5 +1,20 @@
 {
-  "indexes": [],
+  "indexes": [
+    {
+      "collectionGroup": "Wagers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "initiatorId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
   "fieldOverrides": [
     {
       "collectionGroup": "fcm_tokens",

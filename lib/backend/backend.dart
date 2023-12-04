@@ -7,11 +7,11 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/games_record.dart';
 import 'schema/wagers_record.dart';
-import 'schema/matches_record.dart';
 import 'schema/notifications_record.dart';
 import 'schema/friend_requests_record.dart';
 import 'schema/users_record.dart';
 import 'schema/friend_ships_record.dart';
+import 'schema/matches_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -21,11 +21,11 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/games_record.dart';
 export 'schema/wagers_record.dart';
-export 'schema/matches_record.dart';
 export 'schema/notifications_record.dart';
 export 'schema/friend_requests_record.dart';
 export 'schema/users_record.dart';
 export 'schema/friend_ships_record.dart';
+export 'schema/matches_record.dart';
 
 /// Functions to query GamesRecords (as a Stream and as a Future).
 Future<int> queryGamesRecordCount({
@@ -96,43 +96,6 @@ Future<List<WagersRecord>> queryWagersRecordOnce({
     queryCollectionOnce(
       WagersRecord.collection,
       WagersRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query MatchesRecords (as a Stream and as a Future).
-Future<int> queryMatchesRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      MatchesRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<MatchesRecord>> queryMatchesRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      MatchesRecord.collection,
-      MatchesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<MatchesRecord>> queryMatchesRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      MatchesRecord.collection,
-      MatchesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -284,6 +247,43 @@ Future<List<FriendShipsRecord>> queryFriendShipsRecordOnce({
     queryCollectionOnce(
       FriendShipsRecord.collection(parent),
       FriendShipsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query MatchesRecords (as a Stream and as a Future).
+Future<int> queryMatchesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MatchesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MatchesRecord>> queryMatchesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MatchesRecord.collection,
+      MatchesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MatchesRecord>> queryMatchesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MatchesRecord.collection,
+      MatchesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

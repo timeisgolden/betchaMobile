@@ -284,7 +284,7 @@ class _BottomNavigationComponentWidgetState
                           logFirebaseEvent('TabDiscover_navigate_to');
 
                           context.goNamed(
-                            'Discover',
+                            'Wagers',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -353,7 +353,7 @@ class _BottomNavigationComponentWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 8.0),
                                   child: Text(
-                                    'Discover',
+                                    'Wagers',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -421,7 +421,7 @@ class _BottomNavigationComponentWidgetState
                                           borderRadius:
                                               BorderRadius.circular(0.0),
                                           child: SvgPicture.asset(
-                                            'assets/images/smile-outline.svg',
+                                            'assets/images/notifications.svg',
                                             width: 24.0,
                                             height: 24.0,
                                             fit: BoxFit.cover,
@@ -436,7 +436,7 @@ class _BottomNavigationComponentWidgetState
                                           borderRadius:
                                               BorderRadius.circular(0.0),
                                           child: SvgPicture.asset(
-                                            'assets/images/smile-outline.svg',
+                                            'assets/images/notifications-outline.svg',
                                             width: 24.0,
                                             height: 24.0,
                                             fit: BoxFit.cover,

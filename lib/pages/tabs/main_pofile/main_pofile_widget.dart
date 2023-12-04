@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/app_bar_component/app_bar_component_widget.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,6 +8,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -74,32 +74,20 @@ class _MainPofileWidgetState extends State<MainPofileWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
-          backgroundColor: Color(0xFF111111),
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
           automaticallyImplyLeading: false,
-          actions: [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: wrapWithModel(
-                    model: _model.appBarComponentModel,
-                    updateCallback: () => setState(() {}),
-                    child: AppBarComponentWidget(
-                      title: 'Profile',
-                      isAllowBack: false,
-                    ),
-                  ),
+          title: Text(
+            'Profile',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Sora',
+                  color: Colors.white,
+                  fontSize: 22.0,
                 ),
-              ],
-            ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
           ),
+          actions: [],
+          centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -112,34 +100,113 @@ class _MainPofileWidgetState extends State<MainPofileWidget> {
                   decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 24.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      29.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'General',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Sora',
-                                          color: Color(0xFF98999A),
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 80.0,
+                                height: 80.0,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100.0),
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    width: 3.0,
                                   ),
                                 ),
-                              ],
-                            ),
+                                child: Builder(
+                                  builder: (context) {
+                                    if (currentUserPhoto != null &&
+                                        currentUserPhoto != '') {
+                                      return Container(
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          currentUserPhoto,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      );
+                                    } else {
+                                      return AuthUserStreamWidget(
+                                        builder: (context) => Container(
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: SvgPicture.asset(
+                                            'assets/images/Default_avatar.svg',
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        valueOrDefault<String>(
+                                          currentUserDisplayName,
+                                          'No Name',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              fontSize: 20.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      currentUserEmail,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(height: 8.0)),
+                                ),
+                              ),
+                            ].divide(SizedBox(width: 12.0)),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    29.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'General',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Sora',
+                                        color: Color(0xFF98999A),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                           InkWell(
                             splashColor: Colors.transparent,

@@ -27,11 +27,6 @@ class FriendShipsRecord extends FirestoreRecord {
   DateTime? get established => _established;
   bool hasEstablished() => _established != null;
 
-  // "friend_id" field.
-  String? _friendId;
-  String get friendId => _friendId ?? '';
-  bool hasFriendId() => _friendId != null;
-
   // "user_id" field.
   DocumentReference? _userId;
   DocumentReference? get userId => _userId;
@@ -42,7 +37,6 @@ class FriendShipsRecord extends FirestoreRecord {
   void _initializeFields() {
     _status = snapshotData['status'] as String?;
     _established = snapshotData['established'] as DateTime?;
-    _friendId = snapshotData['friend_id'] as String?;
     _userId = snapshotData['user_id'] as DocumentReference?;
   }
 
@@ -88,14 +82,12 @@ class FriendShipsRecord extends FirestoreRecord {
 Map<String, dynamic> createFriendShipsRecordData({
   String? status,
   DateTime? established,
-  String? friendId,
   DocumentReference? userId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'status': status,
       'established': established,
-      'friend_id': friendId,
       'user_id': userId,
     }.withoutNulls,
   );
@@ -110,13 +102,12 @@ class FriendShipsRecordDocumentEquality implements Equality<FriendShipsRecord> {
   bool equals(FriendShipsRecord? e1, FriendShipsRecord? e2) {
     return e1?.status == e2?.status &&
         e1?.established == e2?.established &&
-        e1?.friendId == e2?.friendId &&
         e1?.userId == e2?.userId;
   }
 
   @override
-  int hash(FriendShipsRecord? e) => const ListEquality()
-      .hash([e?.status, e?.established, e?.friendId, e?.userId]);
+  int hash(FriendShipsRecord? e) =>
+      const ListEquality().hash([e?.status, e?.established, e?.userId]);
 
   @override
   bool isValidKey(Object? o) => o is FriendShipsRecord;

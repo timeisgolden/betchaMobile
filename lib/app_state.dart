@@ -18,17 +18,71 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _AvailablePrivateSettings =
+          prefs.getStringList('ff_AvailablePrivateSettings') ??
+              _AvailablePrivateSettings;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
 
+  late SharedPreferences prefs;
+
   bool _isRemovingFriend = false;
   bool get isRemovingFriend => _isRemovingFriend;
   set isRemovingFriend(bool _value) {
     _isRemovingFriend = _value;
+  }
+
+  List<String> _AvailablePrivateSettings = [
+    'Public',
+    'Friends Only',
+    'Private'
+  ];
+  List<String> get AvailablePrivateSettings => _AvailablePrivateSettings;
+  set AvailablePrivateSettings(List<String> _value) {
+    _AvailablePrivateSettings = _value;
+    prefs.setStringList('ff_AvailablePrivateSettings', _value);
+  }
+
+  void addToAvailablePrivateSettings(String _value) {
+    _AvailablePrivateSettings.add(_value);
+    prefs.setStringList(
+        'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
+  }
+
+  void removeFromAvailablePrivateSettings(String _value) {
+    _AvailablePrivateSettings.remove(_value);
+    prefs.setStringList(
+        'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
+  }
+
+  void removeAtIndexFromAvailablePrivateSettings(int _index) {
+    _AvailablePrivateSettings.removeAt(_index);
+    prefs.setStringList(
+        'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
+  }
+
+  void updateAvailablePrivateSettingsAtIndex(
+    int _index,
+    String Function(String) updateFn,
+  ) {
+    _AvailablePrivateSettings[_index] =
+        updateFn(_AvailablePrivateSettings[_index]);
+    prefs.setStringList(
+        'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
+  }
+
+  void insertAtIndexInAvailablePrivateSettings(int _index, String _value) {
+    _AvailablePrivateSettings.insert(_index, _value);
+    prefs.setStringList(
+        'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
   }
 }
 

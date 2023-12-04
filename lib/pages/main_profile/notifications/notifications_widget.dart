@@ -59,7 +59,7 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(82.0),
           child: AppBar(

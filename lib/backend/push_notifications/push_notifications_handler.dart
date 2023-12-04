@@ -131,7 +131,7 @@ final parametersBuilderMap =
   'OrderDetails': ParameterData.none(),
   'ShowMorepopularevent': ParameterData.none(),
   'EventDetail': ParameterData.none(),
-  'Discover': ParameterData.none(),
+  'Wagers': ParameterData.none(),
   'Friends': ParameterData.none(),
   'OtherProfileDetail': (data) async => ParameterData(
         allParams: {
@@ -139,6 +139,7 @@ final parametersBuilderMap =
               data, 'userRef', UsersRecord.fromSnapshot),
         },
       ),
+  'CreateWager': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

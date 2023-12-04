@@ -27,27 +27,27 @@ class GamesRecord extends FirestoreRecord {
   String get description => _description ?? '';
   bool hasDescription() => _description != null;
 
-  // "image_icon" field.
-  String? _imageIcon;
-  String get imageIcon => _imageIcon ?? '';
-  bool hasImageIcon() => _imageIcon != null;
-
-  // "game_modes" field.
-  List<String>? _gameModes;
-  List<String> get gameModes => _gameModes ?? const [];
-  bool hasGameModes() => _gameModes != null;
-
-  // "supported_platforms" field.
+  // "supportedPlatforms" field.
   List<String>? _supportedPlatforms;
   List<String> get supportedPlatforms => _supportedPlatforms ?? const [];
   bool hasSupportedPlatforms() => _supportedPlatforms != null;
 
+  // "gameModes" field.
+  List<String>? _gameModes;
+  List<String> get gameModes => _gameModes ?? const [];
+  bool hasGameModes() => _gameModes != null;
+
+  // "imageUrl" field.
+  String? _imageUrl;
+  String get imageUrl => _imageUrl ?? '';
+  bool hasImageUrl() => _imageUrl != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _description = snapshotData['description'] as String?;
-    _imageIcon = snapshotData['image_icon'] as String?;
-    _gameModes = getDataList(snapshotData['game_modes']);
-    _supportedPlatforms = getDataList(snapshotData['supported_platforms']);
+    _supportedPlatforms = getDataList(snapshotData['supportedPlatforms']);
+    _gameModes = getDataList(snapshotData['gameModes']);
+    _imageUrl = snapshotData['imageUrl'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -86,13 +86,13 @@ class GamesRecord extends FirestoreRecord {
 Map<String, dynamic> createGamesRecordData({
   String? name,
   String? description,
-  String? imageIcon,
+  String? imageUrl,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'name': name,
       'description': description,
-      'image_icon': imageIcon,
+      'imageUrl': imageUrl,
     }.withoutNulls,
   );
 
@@ -107,18 +107,18 @@ class GamesRecordDocumentEquality implements Equality<GamesRecord> {
     const listEquality = ListEquality();
     return e1?.name == e2?.name &&
         e1?.description == e2?.description &&
-        e1?.imageIcon == e2?.imageIcon &&
+        listEquality.equals(e1?.supportedPlatforms, e2?.supportedPlatforms) &&
         listEquality.equals(e1?.gameModes, e2?.gameModes) &&
-        listEquality.equals(e1?.supportedPlatforms, e2?.supportedPlatforms);
+        e1?.imageUrl == e2?.imageUrl;
   }
 
   @override
   int hash(GamesRecord? e) => const ListEquality().hash([
         e?.name,
         e?.description,
-        e?.imageIcon,
+        e?.supportedPlatforms,
         e?.gameModes,
-        e?.supportedPlatforms
+        e?.imageUrl
       ]);
 
   @override

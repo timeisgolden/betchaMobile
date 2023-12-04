@@ -76,7 +76,7 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
           backgroundColor: Color(0xFF111111),
           automaticallyImplyLeading: false,
@@ -292,13 +292,14 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFF636363),
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF636363),
+                                color: FlutterFlowTheme.of(context).borderColor,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -347,7 +348,8 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFF636363),
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context)
@@ -358,7 +360,7 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF636363),
+                                color: FlutterFlowTheme.of(context).borderColor,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -407,14 +409,15 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFF636363),
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF636363),
+                                color: FlutterFlowTheme.of(context).borderColor,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
@@ -466,13 +469,14 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                 .labelMedium
                                 .override(
                                   fontFamily: 'Inter',
-                                  color: Color(0xFF636363),
+                                  color:
+                                      FlutterFlowTheme.of(context).borderColor,
                                   fontWeight: FontWeight.w500,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context).labelMedium,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF636363),
+                                color: FlutterFlowTheme.of(context).borderColor,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),

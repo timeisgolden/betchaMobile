@@ -74,7 +74,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFF111111),
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         body: SafeArea(
           top: true,
           child: Container(
@@ -170,23 +170,36 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     width: 3.0,
                                   ),
                                 ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Start\nWager',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Sora',
-                                            color: Colors.white,
-                                            fontSize: 13.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ],
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    logFirebaseEvent(
+                                        'HOME_PAGE_Row_ip1j5kw1_ON_TAP');
+                                    logFirebaseEvent('Row_navigate_to');
+
+                                    context.pushNamed('CreateWager');
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Start\nWager',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Sora',
+                                              color: Colors.white,
+                                              fontSize: 13.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                               Expanded(

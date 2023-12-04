@@ -1,23 +1,19 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_charts.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/wagers_components/wager_card/wager_card_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import '/flutter_flow/random_data_util.dart' as random_data;
-import 'discover_widget.dart' show DiscoverWidget;
-import 'package:badges/badges.dart' as badges;
+import 'wagers_widget.dart' show WagersWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class DiscoverModel extends FlutterFlowModel<DiscoverWidget> {
+class WagersModel extends FlutterFlowModel<WagersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

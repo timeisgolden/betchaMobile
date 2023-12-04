@@ -71,7 +71,22 @@ class _InboxWidgetState extends State<InboxWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.black,
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Inbox',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Sora',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                ),
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
         body: SafeArea(
           top: true,
           child: Container(
@@ -84,27 +99,6 @@ class _InboxWidgetState extends State<InboxWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Inbox',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: Colors.white,
-                                      fontSize: 24.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 164.0, 0.0, 0.0),

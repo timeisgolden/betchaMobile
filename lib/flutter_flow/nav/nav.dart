@@ -192,9 +192,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EventDetailWidget(),
         ),
         FFRoute(
-          name: 'Discover',
-          path: '/discover',
-          builder: (context, params) => DiscoverWidget(),
+          name: 'Wagers',
+          path: '/wagers',
+          builder: (context, params) => WagersWidget(),
         ),
         FFRoute(
           name: 'Friends',
@@ -210,6 +210,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => OtherProfileDetailWidget(
             userRef: params.getParam('userRef', ParamType.Document),
           ),
+        ),
+        FFRoute(
+          name: 'CreateWager',
+          path: '/createWager',
+          builder: (context, params) => CreateWagerWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

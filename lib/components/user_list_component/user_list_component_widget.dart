@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/custom_cloud_functions/custom_cloud_function_response_manager.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/profile_image_component/profile_image_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -178,9 +179,9 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget>
                                                   Colors.transparent,
                                               onTap: () async {
                                                 logFirebaseEvent(
-                                                    'USER_LIST_COMPONENT_ProfileImageContiner');
+                                                    'USER_LIST_COMPONENT_Container_0tcag7go_O');
                                                 logFirebaseEvent(
-                                                    'ProfileImageContiner_navigate_to');
+                                                    'ProfileImageComponent_navigate_to');
 
                                                 context.pushNamed(
                                                   'OtherProfileDetail',
@@ -196,58 +197,12 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget>
                                                   },
                                                 );
                                               },
-                                              child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 1.0,
-                                                  ),
-                                                ),
-                                                child: Builder(
-                                                  builder: (context) {
-                                                    if (availableUsersListItem
-                                                                .photoUrl !=
-                                                            null &&
-                                                        availableUsersListItem
-                                                                .photoUrl !=
-                                                            '') {
-                                                      return ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          availableUsersListItem
-                                                              .photoUrl,
-                                                          width:
-                                                              double.infinity,
-                                                          height:
-                                                              double.infinity,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      );
-                                                    } else {
-                                                      return Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.00, 0.00),
-                                                        child: Icon(
-                                                          Icons.person,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 40.0,
-                                                        ),
-                                                      );
-                                                    }
-                                                  },
-                                                ),
+                                              child:
+                                                  ProfileImageComponentWidget(
+                                                key: Key(
+                                                    'Key0tc_${availableUsersListIndex}_of_${availableUsersList.length}'),
+                                                imageUrl: availableUsersListItem
+                                                    .photoUrl,
                                               ),
                                             ),
                                             Padding(

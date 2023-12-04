@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/profile_image_component/profile_image_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -170,9 +171,9 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                   Colors.transparent,
                                               onTap: () async {
                                                 logFirebaseEvent(
-                                                    'SENT_REQUESTS_ProfileImageContiner_ON_TA');
+                                                    'SENT_REQUESTS_Container_nwgvzp2y_ON_TAP');
                                                 logFirebaseEvent(
-                                                    'ProfileImageContiner_navigate_to');
+                                                    'ProfileImageComponent_navigate_to');
 
                                                 context.pushNamed(
                                                   'OtherProfileDetail',
@@ -188,58 +189,13 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                   },
                                                 );
                                               },
-                                              child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 1.0,
-                                                  ),
-                                                ),
-                                                child: Builder(
-                                                  builder: (context) {
-                                                    if (requestItemContainerUsersRecord
-                                                                .photoUrl !=
-                                                            null &&
-                                                        requestItemContainerUsersRecord
-                                                                .photoUrl !=
-                                                            '') {
-                                                      return ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          requestItemContainerUsersRecord
-                                                              .photoUrl,
-                                                          width:
-                                                              double.infinity,
-                                                          height:
-                                                              double.infinity,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      );
-                                                    } else {
-                                                      return Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.00, 0.00),
-                                                        child: Icon(
-                                                          Icons.person,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 40.0,
-                                                        ),
-                                                      );
-                                                    }
-                                                  },
-                                                ),
+                                              child:
+                                                  ProfileImageComponentWidget(
+                                                key: Key(
+                                                    'Keynwg_${sentListIndex}_of_${sentList.length}'),
+                                                imageUrl:
+                                                    requestItemContainerUsersRecord
+                                                        .photoUrl,
                                               ),
                                             ),
                                             Padding(
@@ -287,9 +243,9 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                             FFButtonWidget(
                                               onPressed: () async {
                                                 logFirebaseEvent(
-                                                    'SENT_REQUESTS_COMP_AcceptBtn_ON_TAP');
+                                                    'SENT_REQUESTS_COMP_RevokeBtn_ON_TAP');
                                                 logFirebaseEvent(
-                                                    'AcceptBtn_alert_dialog');
+                                                    'RevokeBtn_alert_dialog');
                                                 var confirmDialogResponse =
                                                     await showDialog<bool>(
                                                           context: context,
@@ -297,9 +253,9 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                               (alertDialogContext) {
                                                             return AlertDialog(
                                                               title: Text(
-                                                                  'Rvoke Friend Request'),
+                                                                  'Revoke Friend Request'),
                                                               content: Text(
-                                                                  'Your friend request has been successfully revoked.'),
+                                                                  'Are you sure you want to revoke this friend request.'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
@@ -324,7 +280,7 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                         false;
                                                 if (confirmDialogResponse) {
                                                   logFirebaseEvent(
-                                                      'AcceptBtn_backend_call');
+                                                      'RevokeBtn_backend_call');
                                                   unawaited(
                                                     () async {
                                                       await sentListItem
@@ -333,7 +289,7 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                     }(),
                                                   );
                                                   logFirebaseEvent(
-                                                      'AcceptBtn_show_snack_bar');
+                                                      'RevokeBtn_show_snack_bar');
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
                                                     SnackBar(
