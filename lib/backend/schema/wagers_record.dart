@@ -87,7 +87,7 @@ class WagersRecord extends FirestoreRecord {
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('Wagers');
+      FirebaseFirestore.instance.collection('wagers');
 
   static Stream<WagersRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => WagersRecord.fromSnapshot(s));

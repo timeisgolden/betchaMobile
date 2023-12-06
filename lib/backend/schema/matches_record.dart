@@ -43,8 +43,8 @@ class MatchesRecord extends FirestoreRecord {
   bool hasScoreOrResult() => _scoreOrResult != null;
 
   // "status" field.
-  EnumMatchStatus? _status;
-  EnumMatchStatus? get status => _status;
+  String? _status;
+  String get status => _status ?? '';
   bool hasStatus() => _status != null;
 
   void _initializeFields() {
@@ -53,11 +53,11 @@ class MatchesRecord extends FirestoreRecord {
     _endedAt = snapshotData['endedAt'] as DateTime?;
     _winnerId = snapshotData['winnerId'] as DocumentReference?;
     _scoreOrResult = snapshotData['scoreOrResult'] as String?;
-    _status = deserializeEnum<EnumMatchStatus>(snapshotData['status']);
+    _status = snapshotData['status'] as String?;
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('Matches');
+      FirebaseFirestore.instance.collection('matches');
 
   static Stream<MatchesRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => MatchesRecord.fromSnapshot(s));
@@ -96,7 +96,7 @@ Map<String, dynamic> createMatchesRecordData({
   DateTime? endedAt,
   DocumentReference? winnerId,
   String? scoreOrResult,
-  EnumMatchStatus? status,
+  String? status,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{

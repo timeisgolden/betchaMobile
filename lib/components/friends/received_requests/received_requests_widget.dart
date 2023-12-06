@@ -412,11 +412,6 @@ class _ReceivedRequestsWidgetState extends State<ReceivedRequestsWidget>
                                                 if (confirmDialogResponse) {
                                                   logFirebaseEvent(
                                                       'RejectBtn_backend_call');
-                                                  unawaited(
-                                                    () async {}(),
-                                                  );
-                                                  logFirebaseEvent(
-                                                      'RejectBtn_backend_call');
                                                   await friendRequetsListItem
                                                       .reference
                                                       .delete();

@@ -205,7 +205,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'OtherProfileDetail',
           path: '/otherProfileDetail',
           asyncParams: {
-            'userRef': getDoc(['Users'], UsersRecord.fromSnapshot),
+            'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
           },
           builder: (context, params) => OtherProfileDetailWidget(
             userRef: params.getParam('userRef', ParamType.Document),

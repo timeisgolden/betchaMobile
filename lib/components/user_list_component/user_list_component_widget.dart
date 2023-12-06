@@ -145,6 +145,10 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget>
                                 List<FriendShipsRecord>
                                     friendItemContainerFriendShipsRecordList =
                                     snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
                                 final friendItemContainerFriendShipsRecord =
                                     friendItemContainerFriendShipsRecordList
                                             .isNotEmpty

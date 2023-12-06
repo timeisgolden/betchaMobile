@@ -51,7 +51,7 @@ class GamesRecord extends FirestoreRecord {
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('Games');
+      FirebaseFirestore.instance.collection('games');
 
   static Stream<GamesRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => GamesRecord.fromSnapshot(s));

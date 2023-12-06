@@ -51,7 +51,7 @@ class FriendRequestsRecord extends FirestoreRecord {
   }
 
   static CollectionReference get collection =>
-      FirebaseFirestore.instance.collection('FriendRequests');
+      FirebaseFirestore.instance.collection('friendRequests');
 
   static Stream<FriendRequestsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => FriendRequestsRecord.fromSnapshot(s));

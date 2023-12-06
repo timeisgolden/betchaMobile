@@ -236,46 +236,50 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                           ),
                           child: Align(
                             alignment: AlignmentDirectional(0.00, 0.00),
-                            child: Stack(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              children: [
-                                AuthUserStreamWidget(
-                                  builder: (context) => Container(
-                                    width: 96.0,
-                                    height: 96.0,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration:
-                                          Duration(milliseconds: 500),
-                                      fadeOutDuration:
-                                          Duration(milliseconds: 500),
-                                      imageUrl: currentUserPhoto,
-                                      fit: BoxFit.fitWidth,
-                                    ),
-                                  ),
-                                ),
-                                if (_model.uploadedFileUrl != null &&
-                                    _model.uploadedFileUrl != '')
-                                  Container(
-                                    width: 96.0,
-                                    height: 96.0,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration:
-                                          Duration(milliseconds: 500),
-                                      fadeOutDuration:
-                                          Duration(milliseconds: 500),
-                                      imageUrl: _model.uploadedFileUrl,
-                                      fit: BoxFit.fitWidth,
+                            child: Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              child: Stack(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                children: [
+                                  AuthUserStreamWidget(
+                                    builder: (context) => Container(
+                                      width: 96.0,
+                                      height: 96.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            Duration(milliseconds: 500),
+                                        imageUrl: currentUserPhoto,
+                                        fit: BoxFit.fitWidth,
+                                      ),
                                     ),
                                   ),
-                              ],
+                                  if (_model.uploadedFileUrl != null &&
+                                      _model.uploadedFileUrl != '')
+                                    Container(
+                                      width: 96.0,
+                                      height: 96.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 500),
+                                        fadeOutDuration:
+                                            Duration(milliseconds: 500),
+                                        imageUrl: _model.uploadedFileUrl,
+                                        fit: BoxFit.fitWidth,
+                                      ),
+                                    ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

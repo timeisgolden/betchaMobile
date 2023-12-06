@@ -42,11 +42,11 @@ class FriendShipsRecord extends FirestoreRecord {
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
-          ? parent.collection('FriendShips')
-          : FirebaseFirestore.instance.collectionGroup('FriendShips');
+          ? parent.collection('friendShips')
+          : FirebaseFirestore.instance.collectionGroup('friendShips');
 
   static DocumentReference createDoc(DocumentReference parent) =>
-      parent.collection('FriendShips').doc();
+      parent.collection('friendShips').doc();
 
   static Stream<FriendShipsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => FriendShipsRecord.fromSnapshot(s));
