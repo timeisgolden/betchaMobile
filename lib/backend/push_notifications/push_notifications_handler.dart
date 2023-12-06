@@ -140,6 +140,25 @@ final parametersBuilderMap =
         },
       ),
   'CreateWager': ParameterData.none(),
+  'chat_2_Details': (data) async => ParameterData(
+        allParams: {
+          'chatRef': await getDocumentParameter<ChatsRecord>(
+              data, 'chatRef', ChatsRecord.fromSnapshot),
+        },
+      ),
+  'Chats': ParameterData.none(),
+  'chat_2_InviteUsers': (data) async => ParameterData(
+        allParams: {
+          'chatRef': await getDocumentParameter<ChatsRecord>(
+              data, 'chatRef', ChatsRecord.fromSnapshot),
+        },
+      ),
+  'image_Details': (data) async => ParameterData(
+        allParams: {
+          'chatMessage': await getDocumentParameter<ChatMessagesRecord>(
+              data, 'chatMessage', ChatMessagesRecord.fromSnapshot),
+        },
+      ),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

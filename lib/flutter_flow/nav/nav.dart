@@ -215,8 +215,45 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateWager',
           path: '/createWager',
           builder: (context, params) => CreateWagerWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_Details',
+          path: '/chat2Details',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2DetailsWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'Chats',
+          path: '/chats',
+          builder: (context, params) => ChatsWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_InviteUsers',
+          path: '/chat2InviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2InviteUsersWidget(
+            chatRef: params.getParam('chatRef', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'image_Details',
+          path: '/imageDetails',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetailsWidget(
+            chatMessage: params.getParam('chatMessage', ParamType.Document),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

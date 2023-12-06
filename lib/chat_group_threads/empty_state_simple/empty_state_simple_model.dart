@@ -1,20 +1,12 @@
-import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'bottom_navigation_component_widget.dart'
-    show BottomNavigationComponentWidget;
+import 'empty_state_simple_widget.dart' show EmptyStateSimpleWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BottomNavigationComponentModel
-    extends FlutterFlowModel<BottomNavigationComponentWidget> {
-  ///  Local state fields for this component.
-
-  int? selectedPageIndex = 1;
-
+class EmptyStateSimpleModel extends FlutterFlowModel<EmptyStateSimpleWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

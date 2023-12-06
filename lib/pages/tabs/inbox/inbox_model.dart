@@ -1,3 +1,4 @@
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

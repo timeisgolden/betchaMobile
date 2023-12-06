@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
@@ -84,6 +85,21 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList(
         'ff_AvailablePrivateSettings', _AvailablePrivateSettings);
   }
+
+  final _userDocQueryManager = FutureRequestManager<UsersRecord>();
+  Future<UsersRecord> userDocQuery({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<UsersRecord> Function() requestFn,
+  }) =>
+      _userDocQueryManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearUserDocQueryCache() => _userDocQueryManager.clear();
+  void clearUserDocQueryCacheKey(String? uniqueKey) =>
+      _userDocQueryManager.clearRequest(uniqueKey);
 }
 
 LatLng? _latLngFromString(String? val) {

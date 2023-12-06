@@ -32,3 +32,10 @@ export '/other_profile_detail/other_profile_detail_widget.dart'
     show OtherProfileDetailWidget;
 export '/pages/wagers/create_wager/create_wager_widget.dart'
     show CreateWagerWidget;
+export '/chat_group_threads/chat_2_details/chat2_details_widget.dart'
+    show Chat2DetailsWidget;
+export '/pages/tabs/chats/chats_widget.dart' show ChatsWidget;
+export '/chat_group_threads/chat_2_invite_users/chat2_invite_users_widget.dart'
+    show Chat2InviteUsersWidget;
+export '/chat_group_threads/image_details/image_details_widget.dart'
+    show ImageDetailsWidget;

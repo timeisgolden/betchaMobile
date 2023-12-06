@@ -1,3 +1,4 @@
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/friends/friend_list_component/friend_list_component_widget.dart';
 import '/components/friends/received_requests/received_requests_widget.dart';
@@ -212,7 +213,7 @@ class _FriendsWidgetState extends State<FriendsWidget>
                     model: _model.bottomNavigationComponentModel,
                     updateCallback: () => setState(() {}),
                     child: BottomNavigationComponentWidget(
-                      selectedPageIndex: 2,
+                      selectedTabName: EnumTabNames.Friends,
                     ),
                   ),
                 ),

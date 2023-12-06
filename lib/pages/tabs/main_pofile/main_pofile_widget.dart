@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -860,7 +861,7 @@ class _MainPofileWidgetState extends State<MainPofileWidget> {
                       model: _model.bottomNavigationComponentModel,
                       updateCallback: () => setState(() {}),
                       child: BottomNavigationComponentWidget(
-                        selectedPageIndex: 5,
+                        selectedTabName: EnumTabNames.Profile,
                       ),
                     ),
                   ),

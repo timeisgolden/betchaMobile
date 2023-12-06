@@ -1,3 +1,4 @@
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/friends/friend_list_component/friend_list_component_widget.dart';
 import '/components/friends/received_requests/received_requests_widget.dart';

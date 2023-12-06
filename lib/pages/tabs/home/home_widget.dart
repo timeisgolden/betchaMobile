@@ -1,3 +1,4 @@
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/card_challenge/card_challenge_widget.dart';
 import '/components/card_live_challenge/card_live_challenge_widget.dart';
@@ -798,7 +799,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       model: _model.bottomNavigationComponentModel,
                       updateCallback: () => setState(() {}),
                       child: BottomNavigationComponentWidget(
-                        selectedPageIndex: 1,
+                        selectedTabName: EnumTabNames.Home,
                       ),
                     ),
                   ),

@@ -82,6 +82,26 @@ class UsersRecord extends FirestoreRecord {
   bool get allowPaymentNotifications => _allowPaymentNotifications ?? false;
   bool hasAllowPaymentNotifications() => _allowPaymentNotifications != null;
 
+  // "shortDescription" field.
+  String? _shortDescription;
+  String get shortDescription => _shortDescription ?? '';
+  bool hasShortDescription() => _shortDescription != null;
+
+  // "last_active_time" field.
+  DateTime? _lastActiveTime;
+  DateTime? get lastActiveTime => _lastActiveTime;
+  bool hasLastActiveTime() => _lastActiveTime != null;
+
+  // "role" field.
+  String? _role;
+  String get role => _role ?? '';
+  bool hasRole() => _role != null;
+
+  // "title" field.
+  String? _title;
+  String get title => _title ?? '';
+  bool hasTitle() => _title != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -97,6 +117,10 @@ class UsersRecord extends FirestoreRecord {
     _allowPushNotifications = snapshotData['allow_push_notifications'] as bool?;
     _allowPaymentNotifications =
         snapshotData['allow_payment_notifications'] as bool?;
+    _shortDescription = snapshotData['shortDescription'] as String?;
+    _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
+    _role = snapshotData['role'] as String?;
+    _title = snapshotData['title'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -146,6 +170,10 @@ Map<String, dynamic> createUsersRecordData({
   double? walletBallance,
   bool? allowPushNotifications,
   bool? allowPaymentNotifications,
+  String? shortDescription,
+  DateTime? lastActiveTime,
+  String? role,
+  String? title,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -162,6 +190,10 @@ Map<String, dynamic> createUsersRecordData({
       'wallet_ballance': walletBallance,
       'allow_push_notifications': allowPushNotifications,
       'allow_payment_notifications': allowPaymentNotifications,
+      'shortDescription': shortDescription,
+      'last_active_time': lastActiveTime,
+      'role': role,
+      'title': title,
     }.withoutNulls,
   );
 
@@ -185,7 +217,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.paypalInfo == e2?.paypalInfo &&
         e1?.walletBallance == e2?.walletBallance &&
         e1?.allowPushNotifications == e2?.allowPushNotifications &&
-        e1?.allowPaymentNotifications == e2?.allowPaymentNotifications;
+        e1?.allowPaymentNotifications == e2?.allowPaymentNotifications &&
+        e1?.shortDescription == e2?.shortDescription &&
+        e1?.lastActiveTime == e2?.lastActiveTime &&
+        e1?.role == e2?.role &&
+        e1?.title == e2?.title;
   }
 
   @override
@@ -202,7 +238,11 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.paypalInfo,
         e?.walletBallance,
         e?.allowPushNotifications,
-        e?.allowPaymentNotifications
+        e?.allowPaymentNotifications,
+        e?.shortDescription,
+        e?.lastActiveTime,
+        e?.role,
+        e?.title
       ]);
 
   @override

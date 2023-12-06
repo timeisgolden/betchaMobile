@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/enums/enums.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/wagers_components/wager_card/wager_card_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -163,7 +164,7 @@ class _WagersWidgetState extends State<WagersWidget> {
                       model: _model.bottomNavigationComponentModel,
                       updateCallback: () => setState(() {}),
                       child: BottomNavigationComponentWidget(
-                        selectedPageIndex: 3,
+                        selectedTabName: EnumTabNames.Wagers,
                       ),
                     ),
                   ),

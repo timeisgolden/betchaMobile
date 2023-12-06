@@ -1,19 +1,18 @@
-import '/backend/schema/enums/enums.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'bottom_navigation_component_widget.dart'
-    show BottomNavigationComponentWidget;
+import 'user_list_small_widget.dart' show UserListSmallWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BottomNavigationComponentModel
-    extends FlutterFlowModel<BottomNavigationComponentWidget> {
-  ///  Local state fields for this component.
+class UserListSmallModel extends FlutterFlowModel<UserListSmallWidget> {
+  ///  State fields for stateful widgets in this component.
 
-  int? selectedPageIndex = 1;
+  // State field(s) for iuser widget.
+  bool iuserHovered = false;
 
   /// Initialization and disposal methods.
 

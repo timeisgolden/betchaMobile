@@ -25,6 +25,15 @@ enum EnumMatchStatus {
   Completed,
 }
 
+enum EnumTabNames {
+  Home,
+  Friends,
+  Wagers,
+  Chat,
+  Profile,
+  Inbox,
+}
+
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -44,6 +53,8 @@ T? deserializeEnum<T>(String? value) {
       return EnumWagerStatus.values.deserialize(value) as T?;
     case (EnumMatchStatus):
       return EnumMatchStatus.values.deserialize(value) as T?;
+    case (EnumTabNames):
+      return EnumTabNames.values.deserialize(value) as T?;
     default:
       return null;
   }
