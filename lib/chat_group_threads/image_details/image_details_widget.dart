@@ -125,9 +125,9 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -228,7 +228,10 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                                 child: CachedNetworkImage(
                                   fadeInDuration: Duration(milliseconds: 200),
                                   fadeOutDuration: Duration(milliseconds: 200),
-                                  imageUrl: otherUserUsersRecord.photoUrl,
+                                  imageUrl: valueOrDefault<String>(
+                                    otherUserUsersRecord.photoUrl,
+                                    'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                  ),
                                   width: 44.0,
                                   height: 44.0,
                                   fit: BoxFit.cover,

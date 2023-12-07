@@ -255,7 +255,10 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                                             Duration(milliseconds: 500),
                                         fadeOutDuration:
                                             Duration(milliseconds: 500),
-                                        imageUrl: currentUserPhoto,
+                                        imageUrl: valueOrDefault<String>(
+                                          currentUserPhoto,
+                                          'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                        ),
                                         fit: BoxFit.fitWidth,
                                       ),
                                     ),

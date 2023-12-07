@@ -97,7 +97,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
             maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).customColor1,
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
@@ -132,9 +132,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered1!
-                            ? FlutterFlowTheme.of(context).primaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
+                        color: valueOrDefault<Color>(
+                          _model.mouseRegionHovered1!
+                              ? FlutterFlowTheme.of(context).customColor5
+                              : FlutterFlowTheme.of(context).customColor1,
+                          FlutterFlowTheme.of(context).customColor1,
+                        ),
                       ),
                       child: Padding(
                         padding:
@@ -176,7 +179,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                 ),
                 Divider(
                   thickness: 1.0,
-                  color: FlutterFlowTheme.of(context).alternate,
+                  color: FlutterFlowTheme.of(context).customColor6,
                 ),
                 MouseRegion(
                   opaque: false,
@@ -198,9 +201,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered2!
-                            ? FlutterFlowTheme.of(context).primaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
+                        color: valueOrDefault<Color>(
+                          _model.mouseRegionHovered2!
+                              ? FlutterFlowTheme.of(context).customColor5
+                              : FlutterFlowTheme.of(context).customColor1,
+                          FlutterFlowTheme.of(context).customColor1,
+                        ),
                       ),
                       child: Padding(
                         padding:
@@ -248,7 +254,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                 if (_model.showDelete == true)
                   Divider(
                     thickness: 1.0,
-                    color: FlutterFlowTheme.of(context).alternate,
+                    color: FlutterFlowTheme.of(context).customColor6,
                   ),
                 if (_model.showDelete == true)
                   MouseRegion(
@@ -259,9 +265,12 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: _model.mouseRegionHovered3!
-                            ? FlutterFlowTheme.of(context).primaryBackground
-                            : FlutterFlowTheme.of(context).secondaryBackground,
+                        color: valueOrDefault<Color>(
+                          _model.mouseRegionHovered3!
+                              ? FlutterFlowTheme.of(context).customColor5
+                              : FlutterFlowTheme.of(context).customColor1,
+                          FlutterFlowTheme.of(context).customColor1,
+                        ),
                       ),
                       child: Padding(
                         padding:

@@ -88,9 +88,9 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
           automaticallyImplyLeading: false,
           title: Column(
             mainAxisSize: MainAxisSize.max,
@@ -113,14 +113,12 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 4.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
                 borderRadius: 12.0,
                 borderWidth: 1.0,
                 buttonSize: 44.0,
-                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 icon: Icon(
                   Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
+                  color: FlutterFlowTheme.of(context).primaryBtnText,
                   size: 24.0,
                 ),
                 onPressed: () async {
@@ -187,7 +185,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                     child:
                         PagedListView<DocumentSnapshot<Object?>?, UsersRecord>(
                       pagingController: _model.setListViewController(
-                        UsersRecord.collection.orderBy('display_name'),
+                        UsersRecord.collection.orderBy('email'),
                       ),
                       padding: EdgeInsets.fromLTRB(
                         0,
@@ -246,18 +244,25 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                 width: 100.0,
                                 height: 70.0,
                                 decoration: BoxDecoration(
-                                  color: _model.friendsList.contains(
-                                          listViewUsersRecord.reference)
-                                      ? FlutterFlowTheme.of(context).accent1
-                                      : FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                  color: valueOrDefault<Color>(
+                                    _model.friendsList.contains(
+                                            listViewUsersRecord.reference)
+                                        ? FlutterFlowTheme.of(context)
+                                            .customColor5
+                                        : FlutterFlowTheme.of(context)
+                                            .customColor1,
+                                    FlutterFlowTheme.of(context).customColor1,
+                                  ),
                                   borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
-                                    color: _model.friendsList.contains(
-                                            listViewUsersRecord.reference)
-                                        ? FlutterFlowTheme.of(context).primary
-                                        : FlutterFlowTheme.of(context)
-                                            .alternate,
+                                    color: valueOrDefault<Color>(
+                                      _model.friendsList.contains(
+                                              listViewUsersRecord.reference)
+                                          ? FlutterFlowTheme.of(context).primary
+                                          : FlutterFlowTheme.of(context)
+                                              .borderColor,
+                                      FlutterFlowTheme.of(context).borderColor,
+                                    ),
                                     width: 1.0,
                                   ),
                                 ),
@@ -293,8 +298,10 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                   Duration(milliseconds: 200),
                                               fadeOutDuration:
                                                   Duration(milliseconds: 200),
-                                              imageUrl:
-                                                  listViewUsersRecord.photoUrl,
+                                              imageUrl: valueOrDefault<String>(
+                                                listViewUsersRecord.photoUrl,
+                                                'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                              ),
                                               width: 44.0,
                                               height: 44.0,
                                               fit: BoxFit.cover,
@@ -373,9 +380,6 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                                                       .secondary,
                                                 ),
                                           ),
-                                          tileColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
                                           activeColor:
                                               FlutterFlowTheme.of(context)
                                                   .primary,
@@ -410,17 +414,7 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
               child: Container(
                 width: double.infinity,
                 height: 140.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      FlutterFlowTheme.of(context).accent4,
-                      FlutterFlowTheme.of(context).secondaryBackground
-                    ],
-                    stops: [0.0, 1.0],
-                    begin: AlignmentDirectional(0.0, -1.0),
-                    end: AlignmentDirectional(0, 1.0),
-                  ),
-                ),
+                decoration: BoxDecoration(),
                 alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
@@ -553,11 +547,12 @@ class _Chat2InviteUsersWidgetState extends State<Chat2InviteUsersWidget> {
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Inter',
-                                color: Colors.white,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .override(
+                            fontFamily: 'Inter',
+                            color: FlutterFlowTheme.of(context).customColor1,
+                          ),
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,

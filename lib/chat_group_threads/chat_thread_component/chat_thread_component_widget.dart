@@ -65,7 +65,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).primaryBackground,
+        color: FlutterFlowTheme.of(context).customColor5,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -174,7 +174,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
+              color: FlutterFlowTheme.of(context).customColor5,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 3.0,
@@ -279,15 +279,13 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FlutterFlowIconButton(
-                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderColor: FlutterFlowTheme.of(context).borderColor,
                           borderRadius: 60.0,
                           borderWidth: 1.0,
                           buttonSize: 40.0,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
                           icon: Icon(
                             Icons.add_rounded,
-                            color: FlutterFlowTheme.of(context).secondaryText,
+                            color: FlutterFlowTheme.of(context).primaryBtnText,
                             size: 24.0,
                           ),
                           onPressed: () async {
@@ -298,10 +296,11 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                             final selectedMedia =
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
+                              imageQuality: 100,
                               allowPhoto: true,
                               allowVideo: true,
-                              backgroundColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).customColor1,
                               textColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               pickerFontFamily: 'Outfit',
@@ -470,7 +469,6 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
 
                                       setState(() {});
                                     },
-                                    autofocus: true,
                                     textCapitalization:
                                         TextCapitalization.sentences,
                                     textInputAction: TextInputAction.send,
@@ -492,7 +490,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .alternate,
+                                              .borderColor,
                                           width: 1.0,
                                         ),
                                         borderRadius:
@@ -547,12 +545,10 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                       0.0, 4.0, 6.0, 4.0),
                                   child: FlutterFlowIconButton(
                                     borderColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
+                                        .borderColor,
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).accent1,
                                     icon: Icon(
                                       Icons.send_rounded,
                                       color:

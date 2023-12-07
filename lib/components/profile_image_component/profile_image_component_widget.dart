@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'profile_image_component_model.dart';
@@ -61,30 +60,17 @@ class _ProfileImageComponentWidgetState
           width: 1.0,
         ),
       ),
-      child: Builder(
-        builder: (context) {
-          if (widget.imageUrl != null && widget.imageUrl != '') {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                widget.imageUrl!,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            );
-          } else {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: SvgPicture.asset(
-                'assets/images/Default_avatar.svg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            );
-          }
-        },
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Image.network(
+          valueOrDefault<String>(
+            widget.imageUrl,
+            'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+          ),
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

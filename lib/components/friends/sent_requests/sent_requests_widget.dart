@@ -210,15 +210,11 @@ class _SentRequestsWidgetState extends State<SentRequestsWidget>
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    requestItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                null &&
-                                                            requestItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                ''
-                                                        ? requestItemContainerUsersRecord
-                                                            .displayName
-                                                        : 'No Name',
+                                                    valueOrDefault<String>(
+                                                      requestItemContainerUsersRecord
+                                                          .displayName,
+                                                      'No Name',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium,

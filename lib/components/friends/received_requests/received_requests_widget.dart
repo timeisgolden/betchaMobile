@@ -212,15 +212,11 @@ class _ReceivedRequestsWidgetState extends State<ReceivedRequestsWidget>
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    requestItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                null &&
-                                                            requestItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                ''
-                                                        ? requestItemContainerUsersRecord
-                                                            .displayName
-                                                        : 'No Name',
+                                                    valueOrDefault<String>(
+                                                      requestItemContainerUsersRecord
+                                                          .displayName,
+                                                      'No Name',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium,

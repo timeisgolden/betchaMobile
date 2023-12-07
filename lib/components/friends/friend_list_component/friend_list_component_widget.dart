@@ -203,15 +203,11 @@ class _FriendListComponentWidgetState extends State<FriendListComponentWidget>
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    friendItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                null &&
-                                                            friendItemContainerUsersRecord
-                                                                    .displayName !=
-                                                                ''
-                                                        ? friendItemContainerUsersRecord
-                                                            .displayName
-                                                        : 'No Name',
+                                                    valueOrDefault<String>(
+                                                      friendItemContainerUsersRecord
+                                                          .displayName,
+                                                      'No Name',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium,

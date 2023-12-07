@@ -9,7 +9,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -119,39 +118,22 @@ class _MainPofileWidgetState extends State<MainPofileWidget> {
                                     width: 3.0,
                                   ),
                                 ),
-                                child: Builder(
-                                  builder: (context) {
-                                    if (currentUserPhoto != null &&
-                                        currentUserPhoto != '') {
-                                      return Container(
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          currentUserPhoto,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      );
-                                    } else {
-                                      return AuthUserStreamWidget(
-                                        builder: (context) => Container(
-                                          width: double.infinity,
-                                          height: double.infinity,
-                                          clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: SvgPicture.asset(
-                                            'assets/images/Default_avatar.svg',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                  },
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Container(
+                                    width: 120.0,
+                                    height: 120.0,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Image.network(
+                                      valueOrDefault<String>(
+                                        currentUserPhoto,
+                                        'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
                               ),
                               Align(

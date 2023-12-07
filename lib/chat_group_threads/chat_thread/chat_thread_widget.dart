@@ -61,12 +61,12 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).customColor5,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 0.0,
-                    color: FlutterFlowTheme.of(context).alternate,
-                    offset: Offset(0.0, 1.0),
+                    blurRadius: 4.0,
+                    color: Color(0x33000000),
+                    offset: Offset(0.0, 2.0),
                   )
                 ],
                 borderRadius: BorderRadius.circular(0.0),
@@ -122,7 +122,10 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                 child: CachedNetworkImage(
                                   fadeInDuration: Duration(milliseconds: 200),
                                   fadeOutDuration: Duration(milliseconds: 200),
-                                  imageUrl: otherUserUsersRecord.photoUrl,
+                                  imageUrl: valueOrDefault<String>(
+                                    otherUserUsersRecord.photoUrl,
+                                    'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                  ),
                                   width: 44.0,
                                   height: 44.0,
                                   fit: BoxFit.cover,
@@ -266,14 +269,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
               maxWidth: double.infinity,
             ),
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 0.0,
-                  color: FlutterFlowTheme.of(context).alternate,
-                  offset: Offset(0.0, 1.0),
-                )
-              ],
+              color: FlutterFlowTheme.of(context).customColor5,
               borderRadius: BorderRadius.circular(0.0),
             ),
             child: Visibility(
@@ -309,7 +305,10 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                               child: CachedNetworkImage(
                                 fadeInDuration: Duration(milliseconds: 200),
                                 fadeOutDuration: Duration(milliseconds: 200),
-                                imageUrl: currentUserPhoto,
+                                imageUrl: valueOrDefault<String>(
+                                  currentUserPhoto,
+                                  'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                ),
                                 width: 44.0,
                                 height: 44.0,
                                 fit: BoxFit.cover,

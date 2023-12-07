@@ -60,9 +60,9 @@ class _ChatsWidgetState extends State<ChatsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
           automaticallyImplyLeading: false,
           title: Text(
             'My Chats',
@@ -72,11 +72,9 @@ class _ChatsWidgetState extends State<ChatsWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).primary,
-                borderRadius: 12.0,
-                borderWidth: 1.0,
+                borderRadius: 20.0,
+                borderWidth: 0.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).accent1,
                 icon: Icon(
                   Icons.add_comment,
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -101,7 +99,7 @@ class _ChatsWidgetState extends State<ChatsWidget> {
             ),
           ],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -194,13 +192,13 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .customColor5,
                                           boxShadow: [
                                             BoxShadow(
                                               blurRadius: 0.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .customColor6,
                                               offset: Offset(0.0, 1.0),
                                             )
                                           ],
@@ -271,9 +269,6 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                                             height: 44.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent1,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
@@ -307,7 +302,7 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                                                       String>(
                                                                     rowUsersRecord
                                                                         .photoUrl,
-                                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
+                                                                    'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
                                                                   ),
                                                                   width: 44.0,
                                                                   height: 44.0,
@@ -569,8 +564,6 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                                                             32.0,
                                                                         decoration:
                                                                             BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).accent1,
                                                                           borderRadius:
                                                                               BorderRadius.circular(12.0),
                                                                           shape:
@@ -598,7 +591,10 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                                                                 CachedNetworkImage(
                                                                               fadeInDuration: Duration(milliseconds: 300),
                                                                               fadeOutDuration: Duration(milliseconds: 300),
-                                                                              imageUrl: containerUsersRecord.photoUrl,
+                                                                              imageUrl: valueOrDefault<String>(
+                                                                                containerUsersRecord.photoUrl,
+                                                                                'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                                                              ),
                                                                               width: 44.0,
                                                                               height: 44.0,
                                                                               fit: BoxFit.cover,
@@ -651,8 +647,11 @@ class _ChatsWidgetState extends State<ChatsWidget> {
                                                                             BorderRadius.circular(8.0),
                                                                         child: Image
                                                                             .network(
-                                                                          rowUsersRecord
-                                                                              .photoUrl,
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            rowUsersRecord.photoUrl,
+                                                                            'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                                                          ),
                                                                           width:
                                                                               44.0,
                                                                           height:

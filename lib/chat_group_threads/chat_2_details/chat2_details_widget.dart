@@ -87,9 +87,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).customColor5,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).customColor5,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -169,7 +169,10 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.network(
-                                      conditionalBuilderUsersRecord.photoUrl,
+                                      valueOrDefault<String>(
+                                        conditionalBuilderUsersRecord.photoUrl,
+                                        'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                                      ),
                                       width: 44.0,
                                       height: 44.0,
                                       fit: BoxFit.cover,
@@ -285,7 +288,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                   Duration(milliseconds: 300),
                                               imageUrl: valueOrDefault<String>(
                                                 secondUserUsersRecord.photoUrl,
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
+                                                'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
                                               ),
                                               width: 44.0,
                                               height: 44.0,
@@ -323,7 +326,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                           valueOrDefault<String>(
                                             conditionalBuilderUsersRecord
                                                 .photoUrl,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
+                                            'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
                                           ),
                                           width: 44.0,
                                           height: 44.0,
@@ -377,11 +380,10 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
               child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
+                borderColor: FlutterFlowTheme.of(context).borderColor,
                 borderRadius: 12.0,
                 borderWidth: 2.0,
                 buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).primaryBackground,
                 icon: Icon(
                   Icons.more_vert,
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -392,7 +394,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                   logFirebaseEvent('IconButton_bottom_sheet');
                   await showModalBottomSheet(
                     isScrollControlled: true,
-                    backgroundColor: FlutterFlowTheme.of(context).accent4,
+                    backgroundColor: Colors.transparent,
                     barrierColor: Color(0x00FFFFFF),
                     context: context,
                     builder: (context) {

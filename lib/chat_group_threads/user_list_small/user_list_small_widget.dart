@@ -56,9 +56,12 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
         duration: Duration(milliseconds: 150),
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
-          color: _model.iuserHovered!
-              ? FlutterFlowTheme.of(context).primaryBackground
-              : FlutterFlowTheme.of(context).secondaryBackground,
+          color: valueOrDefault<Color>(
+            _model.iuserHovered!
+                ? FlutterFlowTheme.of(context).customColor5
+                : FlutterFlowTheme.of(context).customColor1,
+            FlutterFlowTheme.of(context).customColor1,
+          ),
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
@@ -81,7 +84,10 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      widget.userRef!.photoUrl,
+                      valueOrDefault<String>(
+                        widget.userRef?.photoUrl,
+                        'https://firebasestorage.googleapis.com/v0/b/betcha-test.appspot.com/o/default-avatar.jpeg?alt=media&token=519e6782-f64a-40c0-a5b9-866d2a75eeeb',
+                      ),
                       width: 32.0,
                       height: 32.0,
                       fit: BoxFit.cover,
@@ -111,10 +117,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          valueOrDefault<String>(
-                            widget.userRef?.role,
-                            '--',
-                          ),
+                          widget.userRef!.email,
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
                                     fontFamily: 'Inter',
@@ -134,7 +137,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                     borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,
-                      width: 2.0,
+                      width: 1.0,
                     ),
                   ),
                   child: Align(

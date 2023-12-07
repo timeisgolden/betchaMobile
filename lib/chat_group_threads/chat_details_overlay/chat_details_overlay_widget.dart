@@ -59,7 +59,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).customColor1,
             boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
@@ -166,7 +166,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                 ),
                 Divider(
                   thickness: 1.0,
-                  color: FlutterFlowTheme.of(context).alternate,
+                  color: FlutterFlowTheme.of(context).customColor6,
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -249,7 +249,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                 ),
                 Divider(
                   thickness: 1.0,
-                  color: FlutterFlowTheme.of(context).alternate,
+                  color: FlutterFlowTheme.of(context).customColor6,
                 ),
                 Padding(
                   padding:
@@ -268,12 +268,14 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           EdgeInsetsDirectional.fromSTEB(44.0, 0.0, 44.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleLarge.override(
-                                fontFamily: 'Sora',
-                                fontSize: 18.0,
-                              ),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleLarge
+                          .override(
+                            fontFamily: 'Sora',
+                            color: FlutterFlowTheme.of(context).customColor1,
+                            fontSize: 18.0,
+                          ),
                       elevation: 0.0,
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).alternate,

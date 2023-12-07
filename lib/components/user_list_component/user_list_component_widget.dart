@@ -116,136 +116,25 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget>
                               availableUsersList[availableUsersListIndex];
                           return Align(
                             alignment: AlignmentDirectional(-1.00, 0.00),
-                            child: StreamBuilder<List<FriendShipsRecord>>(
-                              stream: queryFriendShipsRecord(
-                                parent: currentUserReference,
-                                queryBuilder: (friendShipsRecord) =>
-                                    friendShipsRecord.where(
-                                  'user_id',
-                                  isEqualTo: availableUsersListItem.reference,
-                                ),
-                                singleRecord: true,
+                            child: Container(
+                              width: double.infinity,
+                              height: 80.0,
+                              decoration: BoxDecoration(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor1,
                               ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }
-                                List<FriendShipsRecord>
-                                    friendItemContainerFriendShipsRecordList =
-                                    snapshot.data!;
-                                // Return an empty Container when the item does not exist.
-                                if (snapshot.data!.isEmpty) {
-                                  return Container();
-                                }
-                                final friendItemContainerFriendShipsRecord =
-                                    friendItemContainerFriendShipsRecordList
-                                            .isNotEmpty
-                                        ? friendItemContainerFriendShipsRecordList
-                                            .first
-                                        : null;
-                                return Container(
-                                  width: double.infinity,
-                                  height: 80.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .customColor1,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
-                                    child: Row(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 12.0, 12.0, 12.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                logFirebaseEvent(
-                                                    'USER_LIST_COMPONENT_Container_0tcag7go_O');
-                                                logFirebaseEvent(
-                                                    'ProfileImageComponent_navigate_to');
-
-                                                context.pushNamed(
-                                                  'OtherProfileDetail',
-                                                  queryParameters: {
-                                                    'userRef': serializeParam(
-                                                      availableUsersListItem,
-                                                      ParamType.Document,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  extra: <String, dynamic>{
-                                                    'userRef':
-                                                        availableUsersListItem,
-                                                  },
-                                                );
-                                              },
-                                              child:
-                                                  ProfileImageComponentWidget(
-                                                key: Key(
-                                                    'Key0tc_${availableUsersListIndex}_of_${availableUsersList.length}'),
-                                                imageUrl: availableUsersListItem
-                                                    .photoUrl,
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    availableUsersListItem
-                                                                    .displayName !=
-                                                                null &&
-                                                            availableUsersListItem
-                                                                    .displayName !=
-                                                                ''
-                                                        ? availableUsersListItem
-                                                            .displayName
-                                                        : 'No Name',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium,
-                                                  ),
-                                                  Text(
-                                                    availableUsersListItem
-                                                        .email,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium,
-                                                  ),
-                                                ].divide(SizedBox(height: 8.0)),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
                                         InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -253,300 +142,145 @@ class _UserListComponentWidgetState extends State<UserListComponentWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'USER_LIST_COMPONENT_ConditionalBuilder_1');
+                                                'USER_LIST_COMPONENT_Container_urfg5f6l_O');
                                             logFirebaseEvent(
-                                                'ConditionalBuilder_cloud_function');
-                                            try {
-                                              final result =
-                                                  await FirebaseFunctions
-                                                          .instanceFor(
-                                                              region:
-                                                                  'us-central1')
-                                                      .httpsCallable(
-                                                          'deleteFriendship')
-                                                      .call({
-                                                "userId": currentUserUid,
-                                                "friendId":
-                                                    availableUsersListItem.uid,
-                                              });
-                                              _model.functionRes =
-                                                  DeleteFriendshipCloudFunctionCallResponse(
-                                                data:
-                                                    NormalFunctionResponseStruct
-                                                        .fromMap(result.data),
-                                                succeeded: true,
-                                                resultAsString:
-                                                    result.data.toString(),
-                                                jsonBody: result.data,
-                                              );
-                                            } on FirebaseFunctionsException catch (error) {
-                                              _model.functionRes =
-                                                  DeleteFriendshipCloudFunctionCallResponse(
-                                                errorCode: error.code,
-                                                succeeded: false,
-                                              );
-                                            }
+                                                'ProfileImageComponent_navigate_to');
 
-                                            if (_model
-                                                .functionRes!.succeeded!) {
-                                              logFirebaseEvent(
-                                                  'ConditionalBuilder_show_snack_bar');
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(
-                                                SnackBar(
-                                                  content: Text(
-                                                    'Deleted friendship.',
-                                                    style: TextStyle(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
-                                                  ),
-                                                  duration: Duration(
-                                                      milliseconds: 4000),
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondary,
+                                            context.pushNamed(
+                                              'OtherProfileDetail',
+                                              queryParameters: {
+                                                'userRef': serializeParam(
+                                                  availableUsersListItem,
+                                                  ParamType.Document,
                                                 ),
-                                              );
-                                            }
-
-                                            setState(() {});
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'userRef':
+                                                    availableUsersListItem,
+                                              },
+                                            );
                                           },
-                                          child: Builder(
-                                            builder: (context) {
-                                              if (!(friendItemContainerFriendShipsRecord !=
-                                                  null)) {
-                                                return FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  buttonSize: 40.0,
-                                                  icon: Icon(
-                                                    Icons.person_add_alt,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  showLoadingIndicator: true,
-                                                  onPressed: () async {
-                                                    logFirebaseEvent(
-                                                        'USER_LIST_COMPONENT_person_add_alt_ICN_O');
-                                                    logFirebaseEvent(
-                                                        'IconButton_cloud_function');
-                                                    try {
-                                                      final result =
-                                                          await FirebaseFunctions
-                                                              .instance
-                                                              .httpsCallable(
-                                                                  'addFriendRequest')
-                                                              .call({
-                                                        "senderId":
-                                                            currentUserUid,
-                                                        "receiverId":
-                                                            availableUsersListItem
-                                                                .uid,
-                                                      });
-                                                      _model.addFriendFuncRes =
-                                                          AddFriendRequestCloudFunctionCallResponse(
-                                                        data:
-                                                            NormalFunctionResponseStruct
-                                                                .fromMap(result
-                                                                    .data),
-                                                        succeeded: true,
-                                                        resultAsString: result
-                                                            .data
-                                                            .toString(),
-                                                        jsonBody: result.data,
-                                                      );
-                                                    } on FirebaseFunctionsException catch (error) {
-                                                      _model.addFriendFuncRes =
-                                                          AddFriendRequestCloudFunctionCallResponse(
-                                                        errorCode: error.code,
-                                                        succeeded: false,
-                                                      );
-                                                    }
-
-                                                    logFirebaseEvent(
-                                                        'IconButton_show_snack_bar');
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(
-                                                      SnackBar(
-                                                        content: Text(
-                                                          _model
-                                                              .addFriendFuncRes!
-                                                              .data!
-                                                              .message,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
-                                                        ),
-                                                        duration: Duration(
-                                                            milliseconds: 4000),
-                                                        backgroundColor: _model
-                                                                .addFriendFuncRes!
-                                                                .data!
-                                                                .success
-                                                            ? FlutterFlowTheme
-                                                                    .of(context)
-                                                                .success
-                                                            : FlutterFlowTheme
-                                                                    .of(context)
-                                                                .error,
-                                                      ),
-                                                    );
-
-                                                    setState(() {});
-                                                  },
-                                                );
-                                              } else {
-                                                return FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  buttonSize: 40.0,
-                                                  icon: Icon(
-                                                    Icons
-                                                        .person_remove_outlined,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  showLoadingIndicator: true,
-                                                  onPressed: () async {
-                                                    logFirebaseEvent(
-                                                        'USER_LIST_COMPONENT_person_remove_outlin');
-                                                    logFirebaseEvent(
-                                                        'IconButton_alert_dialog');
-                                                    var confirmDialogResponse =
-                                                        await showDialog<bool>(
-                                                              context: context,
-                                                              builder:
-                                                                  (alertDialogContext) {
-                                                                return AlertDialog(
-                                                                  title: Text(
-                                                                      'Confirm Friendship Removal'),
-                                                                  content: Text(
-                                                                      'Are you sure you want to remove this friend from your connections? This action cannot be undone.'),
-                                                                  actions: [
-                                                                    TextButton(
-                                                                      onPressed: () => Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                      child: Text(
-                                                                          'Cancel'),
-                                                                    ),
-                                                                    TextButton(
-                                                                      onPressed: () => Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                      child: Text(
-                                                                          'Confirm'),
-                                                                    ),
-                                                                  ],
-                                                                );
-                                                              },
-                                                            ) ??
-                                                            false;
-                                                    if (confirmDialogResponse) {
-                                                      logFirebaseEvent(
-                                                          'IconButton_cloud_function');
-                                                      try {
-                                                        final result =
-                                                            await FirebaseFunctions
-                                                                    .instanceFor(
-                                                                        region:
-                                                                            'us-central1')
-                                                                .httpsCallable(
-                                                                    'deleteFriendship')
-                                                                .call({
-                                                          "userId":
-                                                              currentUserUid,
-                                                          "friendId":
-                                                              availableUsersListItem
-                                                                  .uid,
-                                                        });
-                                                        _model.deleteFriendFuncRes =
-                                                            DeleteFriendshipCloudFunctionCallResponse(
-                                                          data:
-                                                              NormalFunctionResponseStruct
-                                                                  .fromMap(result
-                                                                      .data),
-                                                          succeeded: true,
-                                                          resultAsString: result
-                                                              .data
-                                                              .toString(),
-                                                          jsonBody: result.data,
-                                                        );
-                                                      } on FirebaseFunctionsException catch (error) {
-                                                        _model.deleteFriendFuncRes =
-                                                            DeleteFriendshipCloudFunctionCallResponse(
-                                                          errorCode: error.code,
-                                                          succeeded: false,
-                                                        );
-                                                      }
-
-                                                      logFirebaseEvent(
-                                                          'IconButton_show_snack_bar');
-                                                      ScaffoldMessenger.of(
-                                                              context)
-                                                          .showSnackBar(
-                                                        SnackBar(
-                                                          content: Text(
-                                                            _model
-                                                                .deleteFriendFuncRes!
-                                                                .data!
-                                                                .message,
-                                                            style: TextStyle(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                            ),
-                                                          ),
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  4000),
-                                                          backgroundColor: _model
-                                                                  .deleteFriendFuncRes!
-                                                                  .data!
-                                                                  .success
-                                                              ? FlutterFlowTheme
-                                                                      .of(
-                                                                          context)
-                                                                  .success
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .error,
-                                                        ),
-                                                      );
-                                                    }
-
-                                                    setState(() {});
-                                                  },
-                                                );
-                                              }
-                                            },
+                                          child: ProfileImageComponentWidget(
+                                            key: Key(
+                                                'Keyurf_${availableUsersListIndex}_of_${availableUsersList.length}'),
+                                            imageUrl:
+                                                availableUsersListItem.photoUrl,
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 12.0)),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  availableUsersListItem
+                                                      .displayName,
+                                                  'No Name',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
+                                              Text(
+                                                availableUsersListItem.email,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
+                                            ].divide(SizedBox(height: 8.0)),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ).animateOnPageLoad(animationsMap[
-                                    'containerOnPageLoadAnimation']!);
-                              },
-                            ),
+                                    FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 30.0,
+                                      buttonSize: 40.0,
+                                      icon: Icon(
+                                        Icons.person_add_alt,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 24.0,
+                                      ),
+                                      showLoadingIndicator: true,
+                                      onPressed: () async {
+                                        logFirebaseEvent(
+                                            'USER_LIST_COMPONENT_person_add_alt_ICN_O');
+                                        logFirebaseEvent(
+                                            'IconButton_cloud_function');
+                                        try {
+                                          final result = await FirebaseFunctions
+                                              .instance
+                                              .httpsCallable('addFriendRequest')
+                                              .call({
+                                            "senderId": currentUserUid,
+                                            "receiverId":
+                                                availableUsersListItem.uid,
+                                          });
+                                          _model.addFriendFuncRes =
+                                              AddFriendRequestCloudFunctionCallResponse(
+                                            data: NormalFunctionResponseStruct
+                                                .fromMap(result.data),
+                                            succeeded: true,
+                                            resultAsString:
+                                                result.data.toString(),
+                                            jsonBody: result.data,
+                                          );
+                                        } on FirebaseFunctionsException catch (error) {
+                                          _model.addFriendFuncRes =
+                                              AddFriendRequestCloudFunctionCallResponse(
+                                            errorCode: error.code,
+                                            succeeded: false,
+                                          );
+                                        }
+
+                                        logFirebaseEvent(
+                                            'IconButton_show_snack_bar');
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              _model.addFriendFuncRes!.data!
+                                                  .message,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor: _model
+                                                    .addFriendFuncRes!
+                                                    .data!
+                                                    .success
+                                                ? FlutterFlowTheme.of(context)
+                                                    .success
+                                                : FlutterFlowTheme.of(context)
+                                                    .error,
+                                          ),
+                                        );
+
+                                        setState(() {});
+                                      },
+                                    ),
+                                  ].divide(SizedBox(width: 12.0)),
+                                ),
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['containerOnPageLoadAnimation']!),
                           );
                         },
                       );
